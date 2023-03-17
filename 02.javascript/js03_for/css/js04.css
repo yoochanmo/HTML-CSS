@@ -1,0 +1,23 @@
+table,
+td {
+  border: 1px solid#ccc;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 5px;
+  font-style: 0.9em;
+}
+
+div {
+  display: inline-block;
+  padding: 0 20px 30px 20px;
+  margin: 15px;
+  border: 1px solid#ccc;
+  line-height: 2;
+}
+
+div h3 {
+  text-align: center;
+  font-weight: bold;
+}

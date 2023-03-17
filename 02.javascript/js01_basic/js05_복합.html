@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*
+      복합대입연산자
+
+      += : a += 1 -> a = a + 1 ;
+      -= : a -= 1 -> a = a - 1 ;
+      *= : a *= 1 -> a = a * 1 ;
+      /= : a /= 1 -> a = a / 1 ;
+    */
+   let a; // <--선언
+   a = 10; // <-- 초기화
+   let b = 10; // 선언과 동시에 초기화;
+   b += 10;     //b = b + 10;
+   console.log("+=", b);
+   b -= 5;
+   console.log("-=", b);
+   b *= 5;
+   console.log("*=", b);
+   b /= 3;
+   console.log("/=", b);
+
+   let list = '';
+   list = list + '<ul>';
+    list = list + '<li>HTML5</li>'
+    list = list + '<li>Javascript</li>'
+    list = list + '<li>CSS3</li>'
+    list = list + '<li>React.js</li>'
+      list = list + '</ul>';
+      console.log(list);
+      document.write(list);
+      
+      //블럭단위 편집 : shift + alt + 왼쪽마우스클릭 + drag
+      let list1 = '';
+      list1 += '<ul>';
+      list1 += '<li>HTML5</li>'
+      list1 += '<li>Javascript</li>'
+      list1 += '<li>CSS3</li>'
+      list1 += '<li>React.js</li>'
+      list1 += '</ul>';
+      document.write(list1);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        /* 기본배경이미지 */
+        background: url(./image/images/bg0.jpg) no-repeat fixed;
+        background-size: cover;
+      }
+
+      @media screen and (max-width: 1024px) {
+        body {
+          /* 가로크기기 1024px 이하일 경우 */
+          background: url(./image/images/bg1.jpg) no-repeat fixed;
+          background-size: cover;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        body {
+          /* 가로크기기 768px 이하일 경우 */
+          background: url(./image/images/bg2.jpg) no-repeat fixed;
+          background-size: cover;
+        }
+      }
+
+      @media screen and (max-width: 320px) {
+        body {
+          /* 가로크기기 320px 이하일 경우 */
+          background: url(./image/images/bg3.jpg) no-repeat fixed;
+          background-size: cover;
+        }
+      }
+    </style>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*
+      증감연산자(1씩 증가 or 감소)
+      ++a : a = a + 1; //전위증가연산자
+      --a : a = a - 1; //전위감소연산자
+      a++ : a = a + 1; //후위증가연산자
+      a-- : a = a - 1; //후위감소연산자
+    */
+    let number = 10;
+    number++; // number = number + 1;
+    console.log('++', number);
+    number--; // number = number - 1;
+    console.log('--', number);
+
+    //number의 값은 10;
+    ++number; // number = number + 1;
+    console.log('++', number);
+    --number; // number = number - 1;
+    console.log('--', number);
+
+    //주의할 점, 현재 number의 값은 10
+    console.log('후위연산자(++) = ', number++); //먼저 10을 출력하고 후에 1증가 11
+    console.log('(++)전위연산자 = ', ++number); //먼저 1을 증가후에 출력
+
+    number = 10;
+    document.write(number++ + '<br>'); // 10 -> 11
+    document.write(++number + '<br>'); // 12
+    document.write(--number + '<br>'); // 12 -> 11
+    document.write(number-- + '<hr>'); // 10
+    </script>
+</head>
+<body>
+  <!-- <h1 id ="counter">0</h1> 
+    <script>
+      //실습. 증가버튼을 클릭하면 1씩 증가시키는 로직 만들기
+      let count = 0;
+      let counter = document.querySelector('#counter');
+      <
+      </script> -->
+      <button onclick="counter.innerHTML = ++count;">+1증가</button>
+      <button onclick="counter.innerHTML = --count;">-1감소</button>
+  <h1 id ="counter">0</h1>
+    <script>
+      //실습 감소버튼을 클릭하면 1씩 감소시키는 로직 만들기
+      let count = 0;
+     let counter = document.querySelector('#counter');
+    </script>
+ 
+</body>
+</html>

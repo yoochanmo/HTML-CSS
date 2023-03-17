@@ -1,0 +1,86 @@
+border : 테두리에 관련한 설정, 많이 사용하는 속성 중 하나
+
+
+
+border-style    :  테두리의 스타일 지정
+
+  · none - 테두리 없음
+
+  · dotted - 도트(점선) 테두리
+
+  · dashed - 대시기호(-) 테두리
+
+  · solid - 일반적인 라인 테두리
+
+  · double - 두 줄로 테두리 지정
+
+  · groove - groove는 홈이라는 뜻으로 움푹 파인 효과를 가진 테두리를 지정
+
+  · ridge - ridge는 산등성이처럼 솟은 부분이란 뜻.
+
+   해당 요소가 위로 올라온 것 같은 효과를 가진 테두리를 지정
+
+  · inset - top(상) + left(좌) 테두리가 진하게 표시되어 요소가 안으로 들어간 느낌을 지정 
+
+  · outset - right(우) + bottom(하) 테두리가 진하게 표시되어 요소가 밖으로 나온 느낌을 지정
+
+
+
+border-width   :  두께 지정
+
+  · thin - border-width:thin
+
+  · medium - default, 중간 테두리(3px)
+
+  · thick - 굵은 테두리로 지정(5px)
+
+  · px 지정 - 가장 많이 사용
+
+  · border: 축약속성
+
+  · border-top: 상 - 축약속성
+
+  · border-left: 좌 - 축약속성
+
+  · border-right: 우 - 축약속성
+
+  · border-bottom: 하 - 축약속성
+
+
+
+ ◇ 보더가 생기는 위치는 박스가 있으면 박스 바깥쪽에 생성
+
+ ◇ 보더의 일부 테두리를 없애려면
+
+     1) 지정된 값을 0px로 
+
+     2) 지정된 값 아래에 border-top:0px; 처럼 재설정
+
+
+
+
+
+border-color   :  색상 지정(1px)
+
+  · 컬러 지정은 상하좌우 각각 지정 가능
+
+  · border-color:red green blue pink; (순서:top right bottom left)
+
+  · border-color:red green blue; (top left-right bottom)
+
+           · border-color:red green; (top-bottom right-left)
+
+  · transparent - default, 투명하게 지정. border:width:transparent
+
+
+
+border-collapse : collapse - 테두리를 하나로 합치게 지정(border-spacing이나 빈 셀 속성은 무시)
+
+      sparate - 기본값, 테두리를 분리(border-spacing이나 빈 셀 속성이 무시되지 않는다)
+
+
+
+border-spacing : px - 테두리선과 요소의 간격을 지정.
+
+     table border와 td border 사이의 간격.
+[출처] [CSS]정리 - border 속성|작성자 everfree

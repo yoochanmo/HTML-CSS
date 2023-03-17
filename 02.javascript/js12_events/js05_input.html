@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <title>Document</title>
+  <style>
+    * { margin: 5px;}
+    input[type=text].on {
+      background-color: slateblue;
+      color: white;
+    }
+    p {
+      display: block;
+      color: #ff0000;
+    }
+  </style>
+  <script>
+    $(function() {
+      $('#m1 input').focus(function(){
+        $(this).addClass('on')
+      }).blur(function(){
+        $(this).removeClass('on')
+      })
+
+      $('#m2').focusin(function(){
+        $(this).children().addClass('on')
+      }).focusout(function(){
+        $(this).children().removeClass('on')
+      })
+
+      $('#m3 input').change(function() {
+        let change = confirm('값을 수정하겠습니까?????');
+        if(!change){
+        $(this).val(10);
+        }
+        })
+
+        $('#m4 input').select(function(){
+          let val = $(this).val();
+          let len = window.getSelection().toString().length;
+          alert(val + '총' + len + '개의 문자를 선택했습니다.!!')
+        })
+    })
+  </script>
+</head>
+<body>
+  <div id="m1"><input type="text" placeholder="값을 입력하세요!"></div>
+  <div id="m2"><input type="text" placeholder="값을 입력하세요!"></div>
+  <div id="m3">
+    <span>값을 수정한 후 다음 입력요소로 입력하기</span>
+    <input type="text" value="10">
+  </div>
+  <div id="m4"><input type="text" value="텍스트를 드래그하세요!"></div>
+  <hr>
+
+  <!-- 실습 myform에서 아이디 or 비밀번호가 입력되지 않았을 경우
+        p.msg1, p.msg2 보이게 하거나 숨기거나 구현하기
+        css(), display:none -> block                             -->
+
+  <form action="" class="myform">
+    <fieldset>
+      <legend>로그인</legend>
+      <div>
+        <label for="userid">아이디</label>
+        <input type="text" id="userid">
+      </div>
+      <p class="msg1">아이디를 입력해보아요~</p>
+      <div>
+        <label for="userpw">비밀번호</label>
+        <input type="text" id="userpw">
+      </div>
+      <p class="msg2">비밀번호를 입력해보아요~</p>
+      <button>로그인</button>
+    </fieldset>
+  </form>
+</body>
+</html>

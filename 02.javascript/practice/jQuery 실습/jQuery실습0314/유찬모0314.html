@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <title>Document</title>
+  <style>
+    /* 전체 body 스타일링 */
+body {
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(to bottom, #a8e6cf, #dcedc1, #ffd3b6, #ffaaa5, #ff8b94);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* form 필드셋 스타일링 */
+fieldset {
+  border: 3px solid blue;
+  text-align: center;
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+/* form 입력 필드 스타일링 */
+label {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+
+input[type="text"].on {
+  background-color: slateblue;
+  color: white;
+}
+
+/* 메시지 스타일링 */
+p {
+  color: #ff0000;
+  margin-top: 5px;
+  display: none;
+}
+
+/* 버튼 스타일링 */
+button {
+  margin: 10px;
+  background-color: rgb(37, 23, 232);
+  transition: background-color 0.3s ease;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(226, 29, 167);
+}
+
+/* 메뉴 스타일링 */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 50px;
+}
+
+#bttn {
+  position: relative;
+  display: block;
+  width: 100px;
+  height: 100px;
+  line-height:25px;
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+#nav {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  font-size: 1.5rem;
+  height: 80px;
+  color: hsl(263, 87%, 48%);
+  border: 5px solid hsl(263, 87%, 48%);
+  border-radius: 15px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+li:hover {
+  background-color: violet;
+}
+a {
+  color: rgb(92, 14, 236);
+  text-decoration: none;
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+  </style>
+</head>
+<body>
+  
+
+  <!--  실습 1. myform에서 아이디 or 비밀번호가 입력되지 않았을 경우
+        p.msg1, p.msg2 보이게 하거나 숨기거나 구현하기
+        css(), display:none -> block  -->
+      
+        
+        <form action="" class="myform">
+    <fieldset>
+      <legend>로그인</legend>
+      <div>
+        <label for="userid">아이디</label>
+        <input type="text" id="userid">
+      </div>
+      <p class="msg1">아이디를 입력해주세요~</p>
+      <div>
+        <label for="userpw">비밀번호</label>
+        <input type="text" id="userpw">
+      </div>
+      <p class="msg2">비밀번호를 입력해주세요~</p>
+      <button>로그인</button>
+    </fieldset>
+  </form>
+        <script>
+        const button = document.querySelector('button');
+        const msg1 = document.querySelector('.msg1');
+        const msg2 = document.querySelector('.msg2');
+        const userid = document.querySelector('#userid');
+        const userpw = document.querySelector('#userpw');
+      
+        button.addEventListener('click',() => {
+          event.preventDefault();
+          if(userid.value === ''){
+            msg1.style.display = 'block';
+          }else {
+            msg1.style.display = 'none';
+          }
+          if(userpw.value === ''){
+            msg2.style.display = 'block';
+          }else {
+            msg2.style.display = 'none';
+      
+          }
+        })
+      
+        </script>
+  <hr>
+  <!-- 실습 2. 메뉴보기/숨기기
+            toggle()과 active속성을 이용하기--> 
+  
+            
+  <h1>실습2. 메뉴</h1>
+  <button id="bttn">&#9776;</button>
+  <nav id="nav">
+    <ul>
+      <li><a href="#">Javascript</a></li>
+      <li><a href="#">Typescript</a></li>
+      <li><a href="#">Node.js</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    $(function() {
+      $('#bttn').click(function(){ 
+        $(this).next().slideToggle(500);
+        
+        
+
+
+
+      })
+    })
+  </script>
+</body>
+</html>

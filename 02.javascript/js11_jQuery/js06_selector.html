@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <title>Document</title>
+<script>
+ // 위치선택자  -> 요소 : odd, 요소 : even, 요소 : first, 요소 : last 
+ //함수선택자 -> 요소 : eq(위치) 요소 : gtn(n) 요소 : nth-child(3n+1)
+  // $(function(){})
+  $(() => {
+    $('tr:odd').css('background', 'orange');
+    $('tr:even').css('background', 'red');
+    $('tr:eq(0)').css('background', 'black').css('color','white');
+    $('tr:nth-child(3n)').css('background', 'green').css('color','gray');
+    $('tr:nth-child(3n+1)').css('background', 'purple').css('color','blue');
+
+  })
+</script>
+</head>
+<body>
+  <table border="1">
+    <colgroup>
+      <col style="width: 100px;">
+      <col style="width: 50px;">
+      <col style="width: 50px;">
+      <col style="width: 200px;">
+    </colgroup>
+    <tr>
+      <th>이름</th>
+      <th>성별</th>
+      <th>나이</th>
+      <th>주소</th>
+    </tr>
+    <tr>
+      <td>손흥민</td>
+      <td>남</td>
+      <td>30</td>
+      <td>토튼햄</td>
+    </tr>
+    <tr>
+      <td>이강인</td>
+      <td>남</td>
+      <td>22</td>
+      <td>마요르카</td>
+    </tr>
+    <tr>
+      <td>김민재</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>백승호</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>이승우</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>주민규</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</body>
+</html>

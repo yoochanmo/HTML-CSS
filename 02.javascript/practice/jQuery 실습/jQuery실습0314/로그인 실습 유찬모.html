@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <title>Document</title>
+  <style>
+    * { margin: 5px;}
+    input[type=text].on {
+      background-color: slateblue;
+      color: white;
+      border: 5px;
+    }
+    p {
+      display: none;
+      color: #ff0000;
+    }
+    fieldset {
+      border: 3px solid blue;
+      text-align: center;
+    }
+    button {
+      margin: 5px;
+      background-color: rgb(37, 23, 232);
+      transition: background-color 1s ease;
+      color: #ffffff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      
+    }
+    button:hover{
+      background-color: rgb(226, 29, 167);
+    }
+    hr {
+      height: 8px;
+      background-color: black;
+    }
+    h1 {
+      text-align: center;
+    }
+  
+#bttn {
+  float: none;
+  width: 900px;
+  height: 80px;
+}
+
+#nav {
+  text-align: center;
+}
+
+#nav ul {
+  display: inline-block;
+}
+
+li {
+  font-size: xx-large;
+  height: 80px;
+  color: hsl(263, 87%, 48%);
+  border: 5px solid rgb(47, 212, 25);
+  
+  
+}
+li:hover{
+  background-color: violet;
+  transition: 1s
+} 
+a{
+  color: lightseagreen;
+}
+
+      
+    
+  </style>
+</head>
+<body>
+  
+
+  <!--  실습 1. myform에서 아이디 or 비밀번호가 입력되지 않았을 경우
+        p.msg1, p.msg2 보이게 하거나 숨기거나 구현하기
+        css(), display:none -> block  -->
+      
+        
+        <form action="" class="myform">
+    <fieldset>
+      <legend>로그인</legend>
+      <div>
+        <label for="userid">아이디</label>
+        <input type="text" id="userid">
+      </div>
+      <p class="msg1">아이디를 입력해주세요~</p>
+      <div>
+        <label for="userpw">비밀번호</label>
+        <input type="text" id="userpw">
+      </div>
+      <p class="msg2">비밀번호를 입력해주세요~</p>
+      <button>로그인</button>
+    </fieldset>
+  </form>
+        <script>
+        const button = document.querySelector('button');
+        const msg1 = document.querySelector('.msg1');
+        const msg2 = document.querySelector('.msg2');
+        const userid = document.querySelector('#userid');
+        const userpw = document.querySelector('#userpw');
+      
+        button.addEventListener('click',() => {
+          event.preventDefault();
+          if(userid.value === ''){
+            msg1.style.display = 'block';
+          }else {
+            msg1.style.display = 'none';
+          }
+          if(userpw.value === ''){
+            msg2.style.display = 'block';
+          }else {
+            msg2.style.display = 'none';
+      
+          }
+        })
+      
+        </script>
+  <hr>
+  <!-- 실습 2. 메뉴보기/숨기기
+            toggle()과 active속성을 이용하기--> 
+  
+            
+  <h1>실습2. 메뉴</h1>
+  <button id="bttn">&#9776;</button>
+  <nav id="nav">
+    <ul>
+      <li><a href="#">Javascript</a></li>
+      <li><a href="#">Typescript</a></li>
+      <li><a href="#">Node.js</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    $(function() {
+      $('#bttn').click(function(){ 
+        $(this).next().slideToggle(500);
+        
+        
+
+
+
+      })
+    })
+  </script>
+</body>
+</html>

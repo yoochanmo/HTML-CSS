@@ -1,0 +1,130 @@
+
+
+/* 도서 목록 페이지 전체 */
+body {
+    background-color: #f03232;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 도서 목록 */
+#bookListUl li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+
+#bookListUl li:last-child {
+    border-bottom: none;
+}
+body {
+background: #E6DADA;
+background: -webkit-linear-gradient(to left, #274046, #E6DADA); 
+background: linear-gradient(to left, #274046, #E6DADA);
+min-height: 100vh;
+margin: 0;
+padding: 0;
+}
+.container {
+    width: 300px;
+    height: 150px;
+    margin-right: 250px;
+    margin-top: 700px;
+    margin-left: 85px;
+
+}
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+}
+.container-fluid{
+    background: -webkit-linear-gradient(to left, #274046, #E6DADA);
+    background: linear-gradient(to left, #274046, #E6DADA);
+}
+.description {
+    display: block; /* inline-block으로 설정되어 있는 것을 block으로 변경 */
+    margin-top: -380px; /* 원하는 만큼 상단 마진 추가 */
+    margin-left: 400px;
+}
+
+.gbook{
+    font-size: 40px;
+    font-weight: 700;
+    text-shadow: 1px 1px black;
+    color: white;
+}
+.mbook{
+    font-weight: 300;
+    color: white;
+}
+.col-sm-3 {
+    margin-right: 80px; /* 이달의 책 추천 사진 간격 조절 */
+}
+.form-control {
+    border-radius: 0;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+input[type="search"] {
+    padding-right: 40px;
+}
+
+.btn-outline-secondary {
+    border-color: #fff;
+    color: #fff;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #fff;
+    color: #212529;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ccc;
+}
+.d-flex{
+    font-size: 15px;
+    display: inline-block;
+}
+.navbar-form {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-form a {
+    margin-left: 10px;
+}
+.container2 {
+    width: 500px;
+    height: 250px;
+    margin-right: 500;
+    margin-top: -40px;
+    margin-left: 373px;
+}
+.input-group{
+    right: 25px;
+}
+.d-flex{
+    width: 400px;
+}
+
+
+
+
+
+
+
+
+
+

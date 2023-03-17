@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*
+      이벤트(events)란?
+
+      특정의 DOM에 사용자가 마우스 또는 키보드등의 행위가 일어 났을 때 문서객체에
+      발생되는 일련의 동작(사건, events)를 말한다. 특정의 이벤트가 발생하면 그 이벤트에 맞는
+      동작을 하는 기능을 수행할 수 있도록 하게 되는데 일반적으로 동작을 수행하는것을 함수와 연결한다.
+      그 함수는 이벤트가 발생되기 전에는 실행되지 않다가 해당 이벤트가 발생되면 수행된다.
+      이 함수를 이벤트핸들러 (Event Handler)라고 한다.
+
+        A. 자바스크립트에서 처리하는 이벤트
+
+      1 . UI 관련 이벤트
+          (on)load : 웹페이지나 스크립트의 로드가 완료가 되었을때
+            unload : 웹페이지가 언로드 될 때 주로, 새로운 페이지가 요청되었을 때 발생
+            error  : 브라우저가 자바스크립의 오류가 발생했거나 요청한 자원이 없을때.. 
+            resize : 브라우저창의 크기를 조절 했을 때
+            scroll : 스크롤바를 움직였을 때
+            select : 특정의 텍스트를 선택했을 때
+      2 . ㅋㅣ보드 관련 이벤트
+            keydown : 키보드의 키를 누르고 있을 때
+            keyup   : 누르고 있던 키를 땔 때
+            keypress : 키를 누르고 땠을 때
+
+      3 . 마우스관련 이벤트
+            click
+            dbclick
+            mousedown
+            mouseup
+            mousemove
+            mouseover : 마우스가 DOM의 위로 움직였을 때 (터치스크린에선 동작하지 않는다.)
+            mouseout  : 마우스가 DOM의 밖으로 움직였을 때 (터치스크린에서는 동작 불가)
+            mouseenter : 마우스를 dom커서에 올려다 놓았을 때
+            mouseleave : 마우스가 dom에서 커서가 빠졌을 때
+
+      4 . 포커스관련 이벤트
+            focus / fucusin : DOM객체에 포커스가 있을 때
+            blur / focusout : DOM객체에 포커스를 잃어 버렸을 때
+
+
+      5 . 폼관련 이벤트
+          input : input or textarea 요소의 값이 변경되었을 때
+          change : select box, check box, radio 객체의 상태가 변경되었을 때
+          submit : form을 submit (button or enter)
+          reset  : reset버튼을 클릭했을 때
+
+      6 . 클립보드관련 이벤트
+          cut : 내용을 잘라내기할 때
+          copy : 내용을 복사할 때
+          paste : 내용을 붙여넣기할 때
+
+        B . 이벤트 등록하는 방법
+
+          1 . inline 방식 : tag의 속성으로 지정하는 것(onclick, keypress...)
+          2 . property 방식 : 발생한 이벤트를 해당 객체의 프로퍼티로 전달하는 즉, 둥록하는 방법이다.
+                              인라인방식은 객체와 강하게 연결되어 있는 상태에 비해 HTML과 JavaScript를
+                              분리하는 방식이다. 대신에 이벤트핸들러방식은 오직 하나의 이벤트만
+                              바인딩(연결)할 수 있다.
+          3 . addEventListener 방식 : 
+          addEventListener 메서드를 이용하면 대상 DOM객체에 이벤트를 바인딩하고 해당 이벤트가 발생했을 때 
+          실행할 콜백함수(이벤트핸들러)를 지정한다.
+          
+          dom객체.addEventListener('이벤트타입', 콜백함수, [, usecapture])
+          useCapture 옵션은 bubbling 수행여부를 설정(기본값은 false)
+          
+          addEventListener 방식은 이전방식에 비해 장점이 있다.
+
+        a. 하나의 이벤트에 복수개의 이벤트핸들러를 추가할 수 있다.
+        b. 캐처링과 버블링을 지원한다.
+        c. HTML요소 뿐만 아니라 모든 DOM요소(HTML, XML, SVG)에 대해 동작한다.
+
+    */
+    window.onload = function () {
+
+
+      
+    }
+
+    function myfunction() {
+      alert(`${this.value}님 안녕하십니까? 반가워요`)
+    }
+    function myfunction1(name) {
+      alert(`${name}님 안녕하십니까? 반가워요`)
+    }
+    // let btn = document.querySelector('#btn');
+    // btn.onclick = function() {
+    //   alert('첫번째 인사 : 안녕하세요 반가워요.')
+    // }
+  </script>
+</head>
+<body>
+  <!-- 1 . 인라인방식 -->
+  <h3 id="header1" ondblclick="alert('header1을 클릭했어')">여기를 클릭하세요</h3>
+  <input type="button" onclick="alert('Hi! 흥민아!' + this.value)" value="흥민">
+  <input type="button" onclick="alert('Hi! 흥민아!' + this.value)" value="민짜이">
+  <input type="button" onclick='myfunction(); myfunction1(this.value)' value="칸진리">
+  <input id ="btn" class="btn" type="button" value="류뚱">
+  <input id ="btn" class="btn" type="button" value="하성킴">
+  <hr>
+
+  <input type="button" id="target" value="흥민">
+  
+
+  <script>
+    let btn1 = document.querySelector('#btn');
+    btn1.onclick = function() {
+      alert('첫번째 인사 : 안녕하세요 반가워요.')
+    }
+    let btn2 = document.querySelector('.btn');
+    btn2.onclick = function() {
+      alert('두번째 인사 : 안녕하세요 반가워요.')
+    }
+
+    let t = document.querySelector('#target');
+    t.addEventListener('click', function(e) {
+      alert(`${e.target.value}님 안녕하십니까? 반가워요`);
+    })
+  
+  
+  </script>
+</body>
+</html>

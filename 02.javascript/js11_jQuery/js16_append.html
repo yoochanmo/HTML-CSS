@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+    // $('tag') - > 선택자
+    // $('<tag>') - > 생성자
+      $(() => {
+        // 1 . appendTo (부모객체)
+        $('<h1></h1>').html('Hello jQuery(1)!!!').appendTo('body');
+        $('<h1>Hello jQuery(2)!!!</h1>').appendTo('body');
+
+
+        // 2 . attr()/appendTo()
+        $('<img>').attr('src', './images/son.jpg').appendTo('body');
+
+
+        // 3 . 객체 $('<img>',{})
+        $('<img>', {
+          src: './images/son.jpg',
+          width : 300,
+          height : 150,
+        }).appendTo('body');
+
+        // 4 . append : 문자열형태의 태그를 문서객체로 추가
+        let h1 = '<h1>Hello jQuery(3)!!!</h1>'
+        let h2 = '<h2>Hello jQuery(4)!!!</h2>'
+
+        $('body').append(h1, h2, h1, h2);
+
+      })
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

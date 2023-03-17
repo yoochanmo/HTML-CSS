@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // while 문법
+    // 초기값 선언
+    // while(조건식) {
+    //  실행할 문장...
+    //  증가식 
+    // }
+
+    // 1 ~ 10까지의 합을 구하기
+    let sum = 0;
+    let i = 100;
+    while(i <= 10){
+      sum = sum + i;
+      i++;
+    }
+    document.write(`while : 1~ 10까지의 합 = ${sum}<br>`);
+    document.write(`<hr>`);
+
+    //do while
+    //초기값 선언
+    //do {
+    //    실행할 문장
+    //      증가식
+    // }while(조건식)
+    // 
+  sum = 0; 
+    i = 100;
+    do {
+      sum = sum + i;
+      i++;
+      console.log(`loop...${i}`);
+    }
+      while(i <= 10)
+      document.write(`do while : 1~ 10까지의 합 = ${sum}<br>`);
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

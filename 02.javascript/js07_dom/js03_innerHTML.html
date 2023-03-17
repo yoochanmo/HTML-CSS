@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    
+    // TextNode : innerHTML vs innerText
+    window.onload = () => {
+
+      // 1 . innerHTML
+    let output = "";
+    output += '<ul>';
+    output += '      <li>HTML</li>';
+    output += '      <li>CSS</li>';
+    output += '      <li>JavaScript</li>';
+    output += '      <li>React</li>';
+    output += '</ul>';
+      
+    document.write(output);
+    document.write(output);
+    document.body.innerHTML = output;
+    document.write('<h1>Document Object Model(1)</h1>');
+    document.body.innerHTML = '<h1>Document Object Model(2)</h1>';
+    // 2 . innerText
+    document.body.innerText = '<h1>Document Object Model(3)</h1>';
+    
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

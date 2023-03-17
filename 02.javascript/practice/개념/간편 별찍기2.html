@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+//1.평범한 삼격형
+    function printStar(num) {
+let result = '';
+for (let i = 1; i <= num; i++) {
+    result += '*'.repeat(i) + '\n';
+}
+console.log(result);
+}
+printStar(20);
+
+
+//2. 역삼각형
+function printReverseStar(num){
+    let result = '';
+    for(let i = num; i >= 1; i--){
+        result += '*'.repeat(i) + '\n';
+    }
+    console.log(result);
+}
+printReverseStar(20);
+
+//입력받은 N의 수에 따라 별 출력
+function printTriangle(n) {
+  for (let i = 1; i <= n; i++) {  // n줄만큼 반복
+    let star = '';  // 별을 담을 빈 문자열 생성
+    for (let j = 1; j <= i; j++) {  // 현재 줄(i)만큼 별을 추가
+    star += '*';
+    }
+    console.log(star);  // 현재 줄의 별 출력
+}
+}
+
+// 예시 출력
+printTriangle(5);
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

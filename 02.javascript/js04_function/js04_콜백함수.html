@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+</head>
+<body>
+  <button onclick="alert('버튼클릭')">인라인 - 클릭</button>
+  <button onclick="display()">함수호출 - 클릭!!</button>
+  <button id="callback">콜백함수 - 클릭!!</button>
+  <button id="arrow">화살표함수 - 클릭!!</button>
+  <script>
+    //콜백함수 callback function
+    // 다른 함수의 인수로 사용하는 함수를 말한다.
+    function display() {
+      alert('버튼을 클릭했습니다!!')
+    }
+  
+    const btn = document.querySelector('#callback');
+    btn.addEventListener('click', display);
+    const btn1 = document.querySelector('#arrow');
+    //btn1.addEventListener('click', function(){alert('화살표함수 - 클릭')});
+    //btn1.addEventListener('click', () => { alert('화살표함수 - 클릭')}); // 화살표함수 중요
+    btn1.addEventListener('click', () => {}); // 화살표함수 중요
+    document.write('실행문1');
+    document.write('실행문2');
+    document.write('실행문3');
+    document.write('실행문4');
+    alert('화살표함수 호출이다!!!');
+
+    function fn01(name, age){
+      alert(`안녕하세요 ${name}님. 나이가 ${age}이구나.`)
+    }
+    function getInfo(aaa){
+      let userName = '홍길동';
+      let userAge = 1000;
+      aaa(userName, userAge);
+    }
+    getInfo(fn01);
+
+
+    </script>
+</body>
+</html>

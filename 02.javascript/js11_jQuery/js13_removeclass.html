@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <title>Document</title>
+  <style>
+    h1.item {color: red;}
+    h1.selected {color : blue}
+  </style>
+  <script>
+    //문서객체에 속성추가 addClass(), 삭제는 removeClass()
+    $(() => {
+      $('h1').removeClass('item');
+    })
+  </script>
+  
+</head>
+<body>
+  <h1 class="item">header-1</h1>
+  <h1 class="item">header-2</h1>
+  <h1 class="item">header-3</h1>
+</body>
+</html>

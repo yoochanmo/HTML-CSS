@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    //1 ~ 10까지의 합계 구하기
+    let sum = 0;
+    sum = sum + 1;
+    sum = sum + 2;
+    sum = sum + 3;
+    sum = sum + 4;
+    sum = sum + 5;
+    sum = sum + 6;
+    sum = sum + 7;
+    sum = sum + 8;
+    sum = sum + 9;
+    sum = sum + 10;
+    document.write('1부터 10까지의 합 = ', sum, '<br>');
+    document.write('<hr>')
+
+    //for문을 사용
+    //for(초기값,조건식,증가식) {....}
+    sum = 0;
+
+    for(i = 1; i <= 55; i++){
+      sum = sum + i;
+    }
+    document.write( `1~ 10까지의 합 = ${sum}<br>`);
+
+
+    sum = 0;
+    for ( i = 1; i <= 10; i = i + 2){
+      sum = sum + i;
+    }
+    document.write(`1~ 10까지의 합 = ${sum}<br>`);
+
+    sum = 0;
+    for ( i = 100; i <= 10; i = i + 2){
+      sum = sum + i;
+    }
+    document.write(`1~ 10까지의 합 = ${sum}<br>`);
+    </script>
+</head>
+<body>
+  
+</body>
+</html>

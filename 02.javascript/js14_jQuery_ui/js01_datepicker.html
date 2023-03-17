@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/Flick/jquery-ui.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>  
+  <title>Document</title>
+  <style>
+    body { font-size: 60%;}
+    h1 { text-align: center;}
+    input[type="text"], label {
+      margin-bottom: 12px;
+      padding: 0.4em;
+      width: 90%;
+    }
+  </style>
+
+<script>
+  $(function() {
+    $('#open-button').click(function() {
+      $('#dialog').dialog('open');
+    })
+
+    $('#dialog').dialog({
+      autoOpen: false,
+      buttons:{
+        submit: function() {
+          let eventName = $('#event_name').val();
+          let eventDate = $('#event_date').val();
+          $('<h3></h3>').html(`${eventName} = ${eventDate}`).appendTo('#output');
+        },
+        reset: function() {
+          $('#event_name').val('');
+          $('#event_date').val('');
+        },
+        cancel: function() {
+          $('#event_name').val('');
+          $('#event_date').val('');
+          $('#dialog').dialog('close');
+        }
+      }
+    })
+
+    $('#event_date').datepicker({
+      dateFormat: 'yy.mm.dd',
+      numberOfMonths:3
+    })
+  })
+</script>
+</head>
+<body>
+  <button id="open-button">일정생성</button>
+  <div id="output"></div>
+  <div id="dialog" title="jQuery UI Dialog=">
+    <h1>오늘의 일정 생성하기</h1>
+    <label for="event_name">일정</label>
+    <input type="text" id="event_name">
+    <label for="event_date">날짜</label>
+    <input type="text" id="event_date">
+  </div>
+</body>
+</html>

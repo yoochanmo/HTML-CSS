@@ -1,0 +1,46 @@
+부트스트랩
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+
+
+
+부트스트랩 3.4.1
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row" style="position: absolute; top: 15%; left: 100px;">
+            <div class="col-md-6">  
+                <h2 class="mb-3">이달의 책 추천</h2>
+                <p class="fs-5 mb-3">이달의 책 추천에는 국내외 다양한 분야의 도서가 소개됩니다.</p>
+                <a href="#" class="btn btn-primary">자세히 보기</a>
+            </div>
+            <div class="col-md-6">
+                <img src="./images/호암자전.jpg" alt="호암자전" class="img-fluid">
+                <div class="bookinfo">
+                    <p>호암자전</p>
+                    <p class="bkwrite">무에서 유를 일군 창조적 창업가가 전하는 경영비법 호암에게 따라붙는 수식어는 많지만, 한국 산업구조의 지형을 여러 번 뒤바꾼 그를 가장 잘 설명하는 말은 다름 아닌 ‘시대를 앞선 창조적 지략가’라는 평가다. 독자들 역시 독립적인 산업기반이 전무했던 일제강점기 시절 무역상으로 출발하여, IT업계를 이끄는 글로벌기업을 일구어낸 창업가에게는 어떠한 특출함이 숨어 있었는지 엿볼 수 있으리라는 기대감으로 이 책을 집어들 것이다.</p>
+                    <p class="bkname">이병철 저</p>
+                </div>
+            </div>
+            </div>
+
+
+
+이달의 책 추천</h2>
+                <p class="mbook">이달의 책 추천에는 국내외다양한 분야의 도서가 소개됩니다.</p>d

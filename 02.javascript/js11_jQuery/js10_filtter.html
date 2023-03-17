@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <title>필터</title>
+  <script>
+  $(() => {
+ // h1을 선택해서 홀수인 요소의 배경색 = green, 글자색 = white
+ // chain method를 이용해서 작성
+ // filter(위치선택자).css()
+    $('h1').filter('h1:odd').css('background', 'green').css('color','white');
+    $('h1').filter('h1:even').css('background', 'yellow').css('color','black');
+
+    $('h1').filter((index) => {
+        return index % 3  === 0
+      }).css({background: 'yellow', color: 'green'})
+
+      $('h1').filter(index => index % 3  === 0)
+        .css({background: 'purple', color: 'yellow'})
+  })
+  </script>
+</head>
+<body>
+  <h1>header-1</h1>
+  <h1>header-2</h1>
+  <h1>header-3</h1>
+  <h1>header-4</h1>
+  <h1>header-5</h1>
+  <h1>header-6</h1>
+</body>
+</html>

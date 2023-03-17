@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /* 
+      screen 객체
+
+      웹브라우저의 화면(window객체)이 아니라 운영체제화면의 속성을 갖는 객체이다.
+      가장 많이 사용되는 속성은 width, height이다.
+    
+    */
+  for(let key in screen){
+    document.write(`${key} = ${screen[key]}<br>`)
+  }
+
+  let child = window.open('', '', 'width=300 height=300');
+  let width = screen.width;
+  let height = screen.height;
+
+  child.moveTo(0, 0);
+  child.resizeTo(width, height);
+
+  //실습. 상대위치를 moveBy(10, 10), resizeBy(-20, -20) 조정하는 setInterVal, 1초씩
+  setInterval(() => {
+    childWindow.resizeBy(-20, -20),
+    childWindow.moveBy(10,10);
+  }, 1500);
+        
+        
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

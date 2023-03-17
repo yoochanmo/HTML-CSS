@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0309 문성연 이벤트 실습</title>
+  <script>
+    window.onload = function () {
+
+      function whenClick() {
+        alert('문서객체가 클릭이 되었다.')
+      }
+
+      // 1. 이벤트추가
+      let header1 = document.querySelector('#header1');
+      header1.onclick = whenClick;
+      let header2 = document.querySelector('#header2');
+      header1.onclick = whenClick;
+
+      // 2. 이벤트삭제
+      header2.onclick = null;
+      // 3. 실습
+      // header3태그를 클릭하면 해당 객체가 삭제가 되는 onclick이벤트를 작성해보세요.
+      let header3 = document.querySelector('#header3');
+      header3.addEventListener("click", function (e) {
+        e.target.remove();
+      });
+
+      // 실습2.
+      // 임의의 img태그를 클릭하면 상세설명내용(p태그)과 상세설명닫기버튼 이 나타내게 
+      // 하고 상세내용닫기버튼을 클릭하면 상세내용이 숨겨지는 이벤트를 작성하세요
+      document.getElementById("btn").style.display = "none";
+      document.getElementById("script0").style.display = "none";
+
+      let image0 = document.querySelector('img');
+      image0.addEventListener("click", function () {
+        document.getElementById("btn").style.display = "";
+      });
+
+      let btn1 = document.querySelector('#btn1');
+      btn1.addEventListener("click", function () {
+        document.getElementById("script0").style.display = "";
+      });
+      let btn2 = document.querySelector('#btn2');
+      btn2.addEventListener("click", function () {
+        document.getElementById("script0").style.display = "none";
+      });
+      // 실습3. button클릭시에 눌린횟수를 카운트하기
+      // button-1을 클릭하면 2개가 동시에 카운트되고
+      // button-2를 클릭하면 button-2의 횟수만 카운트하기
+      // getElementById(), Number(), innerHTML, Number()
+      // button1.onclick -> button2.onclick을 호출  
+
+      let btn3 = document.querySelector('#btn3');
+      let btn4 = document.querySelector('#btn4');
+      let result1 = document.querySelector('#result1');
+      let result2 = document.querySelector('#result2');
+      let x = 0;
+      let y = 0;
+
+      btn3.addEventListener("click", function () {
+        x++
+        y++
+        result1.innerHTML = x;
+        let resultNum1 = x;
+        result1.innerHTML = resultNum1;
+
+        result2.innerHTML = y;
+        let resultNum2 = y;
+        result2.innerHTML = resultNum2;
+      });
+
+      btn4.addEventListener("click", function () {
+        y++
+        result2.innerHTML = y;
+        let resultNum2 = y;
+        result2.innerHTML = resultNum2;
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <!-- 실습1 -->
+  <h3 id="header1">여기를 클릭하세욘</h3>
+  <h3 id="header2">여기를 클릭하세욘</h3>
+
+  <h3 id="header3" style="color: red;">여기를 클릭하세욘</h3>
+  <hr>
+  <!-- 실습2 -->
+  <div id="item">
+    <img id="image0" src="./images/bts.jpg" alt="" width="300px" height="250px"><br>
+    <div id="btn">
+      <button id="btn1">상세설명내용</button>
+      <button id="btn2">상세설명닫기</button>
+    </div>
+    <p id="script0">월드스타 방탄소년단이다.</p>
+  </div>
+  <hr>
+  <!-- 실습3 -->
+  <button id="btn3">button-1</button>
+  <button id="btn4">button-2</button>
+  <div id="result" style="display: flex;">
+    <h1 id="result1" style=" margin-left: 20px;">0</h1>
+    <h1 id="result2" style=" margin-left: 60px;">0</h1>
+  </div>
+</body>
+
+</html>

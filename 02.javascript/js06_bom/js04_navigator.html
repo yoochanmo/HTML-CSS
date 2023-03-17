@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*
+      navigator 객체
+
+      웹페이지를 실행하고 있는 웹브라우저에 대한 정보를 제공하는 객체
+
+      addCodeName : 웹브라우저의 코드명
+      addName : 웹브라우저의 이름
+      appVersion : 웹브라우저의 버전 정보
+      platform : 사용중인 운영체제
+      userAgent : 웹브라우저의 전체적인 정보
+    */
+    for(let key in navigator){
+    document.write(`${key} = ${screen[key]}<br>`)
+    }
+    
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

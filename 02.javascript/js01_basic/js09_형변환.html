@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*
+      1. 외부함수 : alert : 경고창
+                  prompt : 외부에서 데이터 입력,
+                    confirm : 확인(true,false)결과
+      2. 형변환함수 : Number()
+                      String()
+                      Boolean()
+                      */
+
+    // 1 . Number(문자열)
+    //조건 : 매개변수인 문자열은 숫자로 변환이 가능한 문자열이어야 한다.
+    let age = prompt('나이를 입력하세요', 20);
+    console.log(typeof age);
+    console.log(`${age = age + 1}`);
+    
+    Number(age);
+    console.log(typeof age);
+    console.log(`${age = age + 1}`);
+
+    age = Number(age);
+    console.log(typeof age);
+    console.log(`${age = age + 1}`);
+
+    let num = '100';
+    console.log(`${Number(num) + 1}`);
+
+    num = '100a';
+    console.log(`"Nan", ${Number(num) + 1}`); //결과는 NaN 즉, '100a' 문자열은 숫자변환불가!
+
+
+    // Number(true)
+    let 참 = true;
+    console.log(typeof 참);
+    참 = Number(참);
+    console.log(typeof 참);
+    console.log(`${참}`);
+
+console.log("--------------------------------------------------");
+
+
+    // 2. String()
+    //Number , Boolean 등의 값을 문자열로 변환해주는 함수
+    num = 100;
+    String(num);
+    console.log(typeof num);
+    console.log(`${++num}`);
+    
+    let a = true;
+    console.log(typeof a);
+    a = String (a);
+    console.log(typeof a);
+    console.log(`${a}`);
+    console.log('==================================');
+
+
+    // 3. Boolean(숫자)
+    // 숫자일 경우 0은 false, 0이 아닌 모든숫자는 true
+    let b = 0;
+    Boolean(b);
+    console.log(typeof b, ' = ', b);
+    b = Boolean(b);
+    console.log(typeof b, ' = ', b); //false
+    b = Boolean(100);
+    console.log(typeof b, ' = ', b);
+    b = Boolean(-1);
+    console.log(typeof b, ' = ', b);
+    console.log('----------------------------------------------------------');
+  
+    //Boolean(문자열)
+    //공란이거나 값이 없을 경우는 false 이외에는 모두 true
+    b = Boolean('문자열');
+    console.log(typeof b, ' = ', b);
+    b = Boolean(''); 
+    console.log(typeof b, ' = ', b);
+    b = Boolean(null); 
+    console.log(typeof b, ' = ', b);
+    b = Boolean(undefined); 
+    console.log(typeof b, ' = ', b);
+    console.log('----------------------------------------------------------');
+    // 4. parseInt VS Number 
+    let test1 = '00001';
+    console.log(`parseInt = ${parseInt(test1)}`);
+    console.log(` Number = ${Number(test1)}`);
+    
+    test1 = '2023년도';
+    console.log(`parseInt = ${parseInt(test1)}`); //2023
+    console.log(` Number = ${Number(test1)}`); //NAN
+
+    test1 = '년도2023';
+    console.log(`parseInt = ${parseInt(test1)}`); //NAN
+    console.log(` Number = ${Number(test1)}`); //NAN
+    console.log('----------------------------------------------------------');
+
+    // 5 . parseFloat
+    test1 = '10.12345';
+    console.log(`parseInt = ${parseInt(test1)}`);
+    console.log(`parseFloat = ${parseFloat(test1)}`);
+    console.log(`Number = ${Number(test1)}`);
+
+    </script>
+
+  
+</head>
+<body>
+  
+</body>
+</html>

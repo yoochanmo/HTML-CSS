@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 1. querySelector - 문서객체
+    window.onload = () => {
+        let header1 = document.querySelector('#header-1');
+        let header2 = document.querySelector('#header-2');
+
+        header1.innerHTML = 'queryseletor 메서드1';
+        header2.innerHTML = 'queryseletor 메서드2';
+    }
+    // 2. querySelectorAll - 배열형태
+    window.onload = () => {
+      let headers = document.querySelectorAll('h3');
+      for(let i in headers){
+        headers[i].innerHTML = 'querySelectorAll - ' + i;
+      }
+    }
+
+    // 3. 동적으로 문서 객체를 변경
+    // header-3를 선택해서 header-1 처럼 스타일을 변경
+    // 힌트 = 문서객체라면 속성(스타일과 관련된 속성은 style )
+    window.onload = () => {
+      let header3 = document.querySelector('#header-3');
+      header3.style.border = '2px solid';
+      header3.style.color = 'blue';
+      header3.style.backgroundColor = 'orange'; //여기서는 카멜케이스로 사용 언더바 사용 못함.
+
+    }
+
+    // 4. 문서객체를 삭제하기
+    //header-4를 삭제하기 힌트는 removechild 메서드 사용
+    //header-4의 부모 body
+    window.onload = () => {
+      let header4 = document.querySelector('#header-4');
+      document.body.removeChild(header4);
+
+    }
+  </script>
+</head>
+<body>
+  <!-- h1#header-${Header}*4 -->
+  <h3 id="header-1" 
+      style="border:2px solid red; color:green; background-color: mediumseagreen;">
+      Header</h3>
+  <h3 id="header-2">Header</h3>
+  <h3 id="header-3">Header</h3>
+  <h3 id="header-4">Header</h3>
+</body>
+</html>

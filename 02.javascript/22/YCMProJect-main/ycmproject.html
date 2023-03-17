@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/bootstrap-icons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/프로젟트.css">
+    <title>My24</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#" style="color: #274046; font-size: 35px; font-weight: 100; text-shadow: 1px 1px black;">My24</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#" style="color: white; font-size: 1.2rem; font-weight: bold;">홈</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"style="color: white; font-size: 1.2rem; font-weight: bold;">베스트</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" style="color: white; font-size: 1.2rem; font-weight: bold;">신상품</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"style="color: white; font-size: 1.2rem; font-weight: bold;">할인도서</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" style="display: flex; align-items: center;">
+                        <div class="input-group">
+                        <input class="form-control me-2" type="search" placeholder="검색" aria-label="Search">
+                        <button class="btn btn-outline-secondary" type="submit">검색</button>
+                        </div>
+                        <div class="d-flex" style="margin-left: 10px;">
+                        <a href="http://127.0.0.1:5500/login.html" style="color: white; text-decoration: none;">로그인</a>
+                        <a href="http://127.0.0.1:5500/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.html" style="color: white; text-decoration: none; margin-left: 10px;">회원가입</a>
+                        </div>
+                    </form>
+                    
+                    
+                </div>
+            </div>
+        </nav>
+        
+    </header>
+    <main>
+        <!-- 이달의 추천 도서 이미지 -->
+        <div class="container">
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./images/멀쩡한 어른이 되긴 글렀군.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="./images/소크라테스 익스프레스.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="./images/애매한걸 정리.jpg" class="d-block w-100" alt="...">
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- 이달의 추천 도서 책 내용 -->
+    <div class="container2">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="./images/멀쩡한어른책내용.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="./images/소크라테스책내용.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="./images/애매한걸 책내용.jpg" class="d-block w-100" alt="...">
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class="description">
+        <h2 style="color: white; font-weight: bold;">이달의 추천 도서</h2>
+        <p style="color: white;">이달의 책 추천에는 국내외다양한 분야의 도서가 소개됩니다.</p>
+    </div>
+        </div>
+        </div>
+    </div>
+            <div class="row" style="position: absolute; top: 15%; left: 100px;">
+            <div class="bookset">  
+                <h2 class="gbook">베스트셀러</h2>
+                <p class="mbook">최근 7일간 온라인과 매장에서의 판매량 및 주문 수를 기준으로 매일 1회 집계됩니다.</p>
+                <div id="mymodal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h4 class="modal-title">호 암 자 전</h4>
+                            </div>
+                            <div class="modal-body">
+                            <p>삼성 창업주 호암 이병철 전 회장의 전기를 담은『호암자전』이 출간되었다. 한자 쓰기와 세로쓰기를 채택했던 1986년판을 21세기에 맞추어 손본 개정판이다. 일제강점기 당시 민족자본이 전무했던 상황에서 무역상사로 출발한 삼성이 OECD 국가경쟁력 30위권에 드는 선진국의 초일류기업으로 거듭나기까지 지나온 험난한 여정을 호암이 손수 적어 내려갔다. 근현대 한국 최초이자 제일의 창조적 창업가로 손꼽히는 인물이 전하는 이 회고담에는 ‘사업보국’으로 요약되는 그만의 독특한 경영철학과 함께 오늘날의 삼성을 만든 결정적 순간들이 빠짐없이 담겼다. 그러나 이 자전이 단순히 한 경영인의 성공담을 넘어 인물의 결이 생생히 살아 있는 입체적인 기록으로 거듭날 수 있었던 이유는, 끊임없이 격변하는 정세에 맞서 앞날을 제시해야 했던 리더로서 느낀 희로애락까지도 진솔하게 담아낸 덕분이다. 한국 경제발전사에 큰 족적을 남긴 냉철한 경영인이자, 시대의 파도에 맞서 스스로의 뜻을 이루길 포기하지 않았던 한 개인의 진면목이 궁금한 이들이라면 반드시 읽어볼 만한 책이다.</p>
+                            </div>
+                            <div class="modal-footer">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 베스트셀러 -->
+            <div class="col-sm-3">
+                <img src="./images/호암자전.jpg" alt="호암자전" class="img-fluid">
+                <div class="bookinfo" style="color: white;">
+                    <p class="bkwrite"><h1 style="color: white; font-weight: 500; text-shadow: 1px 1px black;">1st</h1>호암자전 / 이병철</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <img src="./images/문단속3.jpg" width="271px" height="400px" alt="스즈메의 문단속" class="img-fluid">
+                <div class="bookinfo" style="color: white;">
+                    <p class="bkwrite"><h2 style="color: white; font-weight: 350; text-shadow: 1px 1px black;">2nd</h2>스즈메의 문단속 / 신카이 마코토</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <img src="./images/가르침2.jpg" width="271px" height="400px" alt="세이노의 가르침" class="img-fluid">
+                <div class="bookinfo" style="color: white;">
+                    <p class="bkwrite"><h3 style="color: white; font-weight: 150; text-shadow: 1px 1px black;">3rd</h3>세이노의 가르침 / 세이노</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+        
+    <div style="height: 1000px"></div>  
+    </main>
+    <!-- 최하단 -->
+    <footer>
+        <hr>
+        <p> 2023 Book Review.</p>
+        <div class="foot_area box_inner">
+            <ul class="foot_list clear">
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보취급방침</a></li>
+            </ul>
+            <p class="addr">서울 종로구 인사동 익선동 11-99
+            <span class="gubun">/</span>
+            <span class="br_line">대표전화 
+            <span class="space0">02-9876-1234</span>
+            <span class="gubun">/</span>
+            <span class="br_line">E-mail : <span class="space0">user@gmail.com</span></span>
+        </span>
+        </p>
+        <p class="copy box_inner">Copiright(c) touristInTour all right reserved</p>
+        </div>
+    </footer>
+    <script src="./js/project.js"></script>
+</body>
+</html>
+        
+        
+        
+

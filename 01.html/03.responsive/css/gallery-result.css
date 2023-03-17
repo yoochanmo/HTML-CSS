@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box; 
+  /* 테두리를 기준으로 크기를 정한다. 
+      - content-box : 콘텍트 영역을 기준으로 크기를 정함
+      - initial : 기본값으로 설정
+      - inherit : 부모요소의 속성값을 상속받아서 크기를 설정
+      - border-box : border 즉 테두리를 기준으로 크기를 설정    */
+}
+body{
+  background-color: #eee;
+  font-size: 16px;
+}
+#wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(320px, 1fr));
+  grid-gap: 1rem;
+}
+.card{
+  background-color: #fff;
+  box-shadow: 0px 1px 5px #222;
+}
+.card> header {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+.card > p {
+  padding: 0.5rem;
+  line-height: 1.6em;
+}
+.card > img {
+  max-width: 100%;
+}

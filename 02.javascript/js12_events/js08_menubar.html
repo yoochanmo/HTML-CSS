@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <title>Document</title>
+  <style>
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "D2Coding";
+  font-size: 12px;
+  color: #000;
+}
+li {
+  list-style: none;
+}
+a { 
+  text-decoration: none;
+  color: black;
+} 
+h1 {
+  text-align: center;
+  padding: 10px 0;
+}
+#gnb {
+  width: 600px;
+  margin: 0 auto;
+}
+#gnb:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+#gnb .m {
+  float: left;
+  width: 120px;
+  text-align: center;
+  position: relative;
+}
+#gnb .m > a {
+      display: block;
+      height: 40px;
+      line-height: 40px;
+      font-size: 1.4em;
+    }
+  #gnb .m.on > a {
+    border-bottom: 4px solid #725f3f;
+    box-sizing: border-box;
+  }
+
+  #gnb .m ul {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    width: 100%;
+    background: #000;
+    display: none;
+  }
+  #gnb .m ul li a {
+    display: block;
+    color: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+  }
+
+  #gnb .m ul li:last-child a {
+    border: none;
+  }
+  #gnb .m ul li a:hover,
+  #gnb .m ul li a:active,
+  #gnb .m ul li a:focus {
+    background: #fff;
+    color: #000;
+  }
+  #visual {
+    background : url('./images/KakaoTalk_20230314_095812377_04.jpg') no-repeat center center;
+    height: 300px;
+  }
+  #visual a {
+    display: block;
+    width: 100px;
+    height: 300px;
+    margin: 0 auto;
+    text-indent: -999999%;
+    overflow: hidden;
+  }
+
+
+    
+
+
+
+  </style>
+  <script>
+$(function() {
+  $('#gnb .m').on('mouseover',function() {
+    $('ul',this).show();
+    $(this).siblings('li').find('ul').hide();
+    $(this).addClass('on').siblings('li').removeClass('on');
+  }).on ('mouseleave',function() {
+    $('#gnb ul').hide().add('#gnb .m').removeClass('on');
+  })
+})
+  </script>
+</head>
+<body>
+  <h1><a href="#">Menu Bar 실습</a></h1>
+  <ul id="gnb">
+    <li class="m">
+      <a href="#">File</a>
+      <ul>
+        <li><a href="#">New</a></li>
+        <li><a href="#">Open</a></li>
+        <li><a href="#">Save</a></li>
+        <li><a href="#">Save As...</a></li>
+      </ul>
+    </li>
+    <li class="m">
+      <a href="#">Edit</a>
+      <ul>
+        <li><a href="#">Find</a></li>
+        <li><a href="#">replace</a></li>
+        <li><a href="#">Save</a></li>
+        <li><a href="#">Save As..</a></li>
+      </ul>
+    </li>
+    <li class="m">
+      <a href="#">source</a>
+      <ul>
+        <li><a href="#">Find</a></li>
+        <li><a href="#">replace</a></li>
+        <li><a href="#">Save</a></li>
+        <li><a href="#">Save As..</a></li>
+      </ul>
+    </li>
+    <li class="m">
+      <a href="#">네비게이터</a>
+      <ul>
+        <li><a href="#">Find</a></li>
+        <li><a href="#">replace</a></li>
+        <li><a href="#">Save</a></li>
+        <li><a href="#">Save As..</a></li>
+      </ul>
+    </li>
+  </ul>
+  <div id="visual"><a href="#">Visual</a></div>
+</body>
+</html>

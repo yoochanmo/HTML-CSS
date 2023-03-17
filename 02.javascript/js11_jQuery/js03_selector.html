@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+  //Jquery 이용해서
+  // 1. 클래스가 item인 놈 전체를 오랜지 색으로
+  // 2. h1태그 클래스 item인 태그를 레드
+  // 3. h1 item sclected 색상 블루
+  $(function(){
+    $('.item').css('color','orange');
+    $('h1.item').css('color','red');
+    $('h1.item.slected').css('color','blue');
+  })
+</script>
+</head>
+<body>
+<h1 class="item">header-1</h1>
+<h1 class="item slected">header-2</h1>
+<h1 class="item">header-3</h1>
+</body>
+</html>

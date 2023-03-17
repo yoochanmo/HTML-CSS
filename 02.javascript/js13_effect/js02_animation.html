@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <title>Document</title>
+  <style>
+    * {margin: 0; padding: 0;}
+    #box {
+      background: mediumseagreen;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+    }
+  </style>
+  <script>
+    /* jQuery Animation
+
+    A. 메서드형태
+
+    1. $().animation(object)
+    2. $().animation(object, speed)
+    3. $().animation(object, speed, easing)
+    4. $().animation(object, speed, easing, callback함수)
+
+    B. animation의 형태
+      
+      opacity, height, top, width, left, margin right, padding bottom
+
+    C. 정지메서드
+
+    1. $().stop()
+    2. $().stop(clearQueue)
+    3. $().stop(clearQueue, goToEnd)
+    */
+
+    $(function() {
+      $('div').hover(function() {
+        $('div').animate({
+          left: '250px',
+          opacity: '0.5',
+          height: '+=150px',
+          width: '+=150px',
+          height: 'toggle',
+          width: 'toggle'
+        })
+      })
+
+      // animation효과는 누적처리
+      $('#box').click(function() {
+        $(this).animate({height:'300px', opacity: '0.5'}, 'fast')
+        $(this).animate({width:'300px', opacity: '0.5'}, 'fast')
+        $(this).animate({height:'100px', opacity: '0.5'}, 'fast')
+        $(this).animate({width:'100px', opacity: '0.5'}, 'fast')
+      })
+    })
+  </script>
+</head>
+<body>
+  <button>Start Animation</button>
+  <div id="box"></div>
+</body>
+</html>

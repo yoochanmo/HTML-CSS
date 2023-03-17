@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    let goal1 = prompt('골 수를 입력하세요', 0);
+    let assi1 = prompt('도움 개수를 입력하세요', 0);
+    console.log(goal1,assi1);
+    sum = goal1 + assi1;
+    console.log('공격포인트 =', sum);
+
+    goal1 = parseInt(goal1);
+    assi1 = parseInt(assi1);
+    console.log(typeof goal1, typeof assi1);
+    sum = goal1 + assi1;
+    console.log('공격포인트 =', sum);
+    document.write(`<p>박지성의 득점 개수는 ${goal1} 입니다.</P>`);
+    document.write(`<p>박지성의 도움 개수는 ${assi1} 입니다.</P>`);
+    document.write(`<p>박지성의 총 공격포인트는 ${sum} 입니다.</P>`);
+      if( goal1 >= 30){
+        alert('득점왕입니다.');
+      }else{
+        alert('분발하세요!');
+      }
+      
+
+
+  </script>
+</head>
+<body>
+  <!-- <p>박지성의 득점 개수는 = ??</p>
+  <p>박지성의 도움 개수는 = ??</p>
+  <p>박지성의 공격포인트는 = ??</p> -->
+</body>
+</html>

@@ -1,0 +1,26 @@
+js 넘버스
+오브젝트
+넘버 메소드
+
+모질라
+배열 array filter 프로토타입 맵
+Math
+JSON
+String
+
+
+03-17
+onreadystatechange
+
+오라클 1521
+
+
+SQL> connect sys <-남바완
+Enter password:
+ERROR:
+ORA-28009: connection as SYS should be as SYSDBA or SYSOPER
+
+
+SQL> connect sys/12345 as sysdba
+Connected.
+SQL>

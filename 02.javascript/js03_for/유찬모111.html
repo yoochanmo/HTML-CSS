@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 중첩 for (nested for)문
+    //  for(){
+    //       for(){
+    //        for ( {
+    //            for( {
+      //            })
+      //        })
+      //       }
+      // }
+      for(i = 1; i <= 50; i++){
+        console.log(`바깥 for loop.... ${i}`);
+          for(j = 1; j <= 10; j++){
+            console.log(`-----> 안쪽 for loop.... ${j}`);
+          }
+      }
+      // 실습1. 구구단 중에서 3단 찍기
+      for(i = 1; i < 10; i++){
+    document.write('3'+'X'+i+'='+ 3*i +'<br>');
+  }
+  document.write(`<hr>`);
+    // 실습 2. 전체 구구단 세로로 출력(중첩 for문)
+    for(k = 2; k < 10; k++){
+          document.write(k + '단' + '<br>');
+        for(c = 1; c < 10; c++){
+          document.write(k + 'X' + c + '=' + (k*c) + '<br>');
+        }
+    }
+    document.write(`<hr>`);
+    // 실습 3. 전체 구구단 가로로 출력(중첩 for문)
+    
+    // for(q = 2; q < 9; q++){
+    //       document.write(q +'단');
+    //       for(v = 1; v <= 10; v++){
+    //         document.write(q + 'X' + v + '=' + (q*v));
+    //       }
+          
+    //     }
+    document.write(
+        '= 2단 = = 3단 = = 4단 = = 5단 = = 6단 = = 7단 = = 8단 = = 9단 = <br>'
+      );
+
+      for (let i = 1; i < 10; i++) {
+        let output = '';
+        for (let dan = 2; dan <= 9; dan++) {
+          output += `${dan} * ${i} = ${dan * i}\t`;
+        }
+        document.write(output + '<br>');
+      }  
+        
+            
+          
+      
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

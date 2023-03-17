@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /* 생성자함수
+
+      1. new 연산자로 객체를 생성할 수 있는 함수
+      2. 생성자함수명은 첫글자는 대문자로 시작하고 카멜케이스를 준수하는 것이 관례이다.
+      3. 일반함수와 생성자함수를 구분하는 방법은 return문의 유무로구분한다.
+        즉, return문이 없고 대문자로 시작하면 생성자함수로 정의한다.
+    */
+    function Student() {} // 생성자함수
+    function student() { return } // 일반함수
+
+    let std1 = new Student();
+    let std2 = new student();
+    let std3 = Student();
+    // new.target으로 new로 생성되었는 지 아니면 객체리터럴 {} 생성되었는지 확인은 true, false로 리턴
+
+    document.write(typeof std1, '<br>');
+    document.write(typeof std2, '<br>');
+    document.write(typeof std3, '<br>');
+
+    // 생성자함수
+    function Student(name, kor, eng, mat) {
+      this.name = name;
+      this.kor = kor;
+      this.eng = eng;
+      this.mat = mat;
+
+      this.getSum = () => this.kor + this.eng + this.mat;
+      this.getAvg = () => this.getSum() / 3;
+    }
+
+    // 객체의 공통영역(Prototype)
+    // JavaScript에서 모든 함수는 공통영역인 prototype영역이 있다.
+    // 공통영역을 정의하는 방법은
+    // 1. 속성   : 생성자함수.prototype.속성명 = 값
+    // 2. 메서드 : 생성자함수.prototype.메서드명 (대표적 toString) 
+    Student.prototype.nation = '대한민국';
+    Student.prototype.toString = function() {
+    return `나의 이름은 ${this.name} 입니다!!`;
+    }
+
+    Student.prototype.getSum = () => this.kor + this.eng + this.mat;
+    Student.prototype.getAvg = () => this.getSum() / 3;
+    
+
+
+
+    let hong = new Student('홍길동', 99,98,97);
+    let sonny = new Student('손흥민', 99,98,97);
+
+    document.write(`${hong.name}의 총점은 ${hong.getSum()},평균은 ${hong.getAvg()}입니다.<br>`)
+    document.write(`${sonny.name}의 총점은 ${sonny.getSum()},평균은 ${sonny.getAvg()}입니다.<br>`)
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

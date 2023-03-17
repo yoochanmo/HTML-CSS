@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Calculator</title>
+</head>
+<body>
+    <input type="text" id="result" disabled>
+    <br>
+    <button onclick="clearResult()">Clear</button>
+    <button onclick="calculate()">=</button>
+    <br>
+    <button onclick="addToResult(1)">1</button>
+    <button onclick="addToResult(2)">2</button>
+    <button onclick="addToResult(3)">3</button>
+    <button onclick="addToResult('+')">+</button>
+    <br>
+    <button onclick="addToResult(4)">4</button>
+    <button onclick="addToResult(5)">5</button>
+    <button onclick="addToResult(6)">6</button>
+    <button onclick="addToResult('-')">-</button>
+    <br>
+    <button onclick="addToResult(7)">7</button>
+    <button onclick="addToResult(8)">8</button>
+    <button onclick="addToResult(9)">9</button>
+    <button onclick="addToResult('*')">*</button>
+    <br>
+    <button onclick="addToResult('.')">.</button>
+    <button onclick="addToResult(0)">0</button>
+    <button onclick="addToResult('/')">/</button>
+</body>
+<script>
+    let result = document.getElementById("result");
+    function addToResult(val) {
+        result.value += val;
+    }
+    function calculate() {
+        result.value = eval(result.value);
+    }
+    function clearResult() {
+        result.value = "";
+    }
+</script>
+</html>

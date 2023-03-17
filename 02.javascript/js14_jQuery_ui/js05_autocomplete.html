@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/Flick/jquery-ui.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>  
+  <title>Document</title>
+  <script>
+    $(function() {
+      let contents = [
+        "bbbb",
+        "aaaa",
+        "cccc",
+        "dddd",
+        "asdwe"
+      ];
+
+      $('#contents').autocomplete({
+        source : contents
+      })
+    })
+  </script>
+</head>
+<body>
+  <div class="ui-widget">
+    <label for="contents">contents...</label>
+    <input type="text" id="contents">
+  </div>
+</body>
+</html>

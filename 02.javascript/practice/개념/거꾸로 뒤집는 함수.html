@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function reverseString(str){
+        var charArray = str.split(""); //문자열을 문자 배열로 변환
+        var reversedArray = []; // 뒤집힌 문자열을 저장할 배열
+        
+        for (var i = charArray.length - 1; i >= 0; i--){
+            reversedArray.push(charArray[i]); //배열요소를 역순으로 추가
+        }
+        return reversedArray.join(""); //문자열로 변환하여 반환
+    }   console.log(reverseString("안녕하세요"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

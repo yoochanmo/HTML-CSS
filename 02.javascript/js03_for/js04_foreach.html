@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/js04.css">
+  <title>Document</title>
+  <script>
+    // forEach :  for문과 array : 배열.forEach(콜백함수)
+    
+    // forof : for문과 array
+    
+    let arr1 = ['손흥민', '이강인', '김민재','김연경','류현진', '홍길동'];
+    console.log(`배열의 크기 = ${arr1.length}`);
+
+    for(let i = 0; i < arr1.length; i++){
+      document.write(`${i} = ${arr1[i]}<br>`);
+    }
+      document.write('<hr>');
+    arr1.forEach(function(name) {
+      document.write(`${name}<br>`);
+    })
+      document.write('<hr>');
+    // arrrow function을 사용 (lambda 식)
+    arr1.forEach( (name) => document.write(`${name}<br>`));
+    document.write('<hr>');
+
+    let arr2 = ['🥝', '🥥', '🍇', '🍈', '🍉'];
+      arr2.forEach((x) => document.write(`${x}`)); 
+      document.write('<hr>');
+
+// 2. forof : for문과 array
+// for of 에서는 배열에서 값을 꺼내온다.
+for(let fruit of arr2){
+  document.write(`${fruit}`);
+}
+document.write('<hr>');
+
+// 3.  forin : for문과 object :
+      let hong = {
+        name : '홍길동',
+        age : 1000,
+        addr : '조선 한양',
+        tel : '010-1234-5678',
+      };
+      console.log(`이름 = ${hong.name}`);
+      console.log(`나이 = ${hong['age']}`);
+      console.log(`주소 = ${hong.addr}`);
+      console.log(`번호 = ${hong.tel}`);
+
+
+      //for in에서는 객체에서 key를 꺼내온다.
+      for (key in hong){
+        document.write(`${key} = ${hong[key]}<br>`); //dot 연산자는 실행이 안됨.
+      }
+      document.write('<hr>');
+
+      // 실습. 자리배치도
+      // 현재 강의실의 인원수와 한 줄에 3명씩 앉을 경우 자리배치도를 출력해보기
+      // if,for(중첩for),table, 컬럼이 안쪽포문 td 바깥쪽
+
+
+      //구구단
+      let dan, ii;
+
+      for(dan =2; dan <= 9; dan++){
+        document.write('<div>');
+        document.write(`<h3>${dan} 단</h3>`);
+          for(ii = 1; ii <= 9; ii++){
+              document.write(`${dan} X ${ii} = ${dan * ii}<br>`);
+            
+          }
+          document.write('</div>');
+
+        
+      }
+
+
+
+
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

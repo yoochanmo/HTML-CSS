@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <title>Document</title>
+  <style>
+    .high-light { background-color: yellow;}
+    .high-light-1 { background-color: yellow;}
+    .high-light-2 { background-color: orange;}
+    .high-light-3 { background-color: blue;}
+    .high-light-4 { background-color: green;}
+    .high-light-5 { background-color: cadetblue;}
+    .high-light-6 { background-color: pink;}
+  
+  </style>
+<script>
+// addClass
+$(() => {
+  $('h1').addClass('high-light');
+  $('h1').addClass((index) => {
+    return 'high-light-' + (index+1)
+  } );
+
+  
+  $('h1').each((index, item) => {
+    $(item).addClass('high-light-' + (index+1));
+  })
+})
+</script>
+</head>
+<body>
+  <h1 class="high-light">header-1</h1>
+  <h1>header-2</h1>
+  <h1>header-3</h1>
+  <h1>header-4</h1>
+  <h1>header-5</h1>
+  <h1>header-6</h1>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. 함수의 기본
+        function add(a, b) {
+return a + b;
+}
+console.log(add(99,1));
+
+    // 2. 함수의 값 반환
+    function multiply(a, b) {
+  return a * b;
+}
+
+var result = multiply(2, 3);
+
+console.log(multiply(4,5));
+
+// 3. 함수 내부에서 함수 선언 각각의 숫자에 1을 더해 합한 함수
+function addTwoNumbers(a, b) {
+function increment(x) {
+    return x + 1;
+}
+    return increment(a) + increment(b);
+}
+
+addTwoNumbers(3, 4); // 9
+console.log(addTwoNumbers(3, 4));
+
+// 4. 함수를 변수에 할당
+var add = function(a, b) {
+    return a + b;
+};
+
+add(3, 4); // 7
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

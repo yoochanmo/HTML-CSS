@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*
+      window.onload 이벤트
+
+      이벤트란? 
+        문서객체의 속성중에 'on'으로 시작되는 속성을 이벤트 속성이라고 한다.
+        이벤트 속성은 null값이 저장되어 있어 해당 이벤트를 사용하려면 이벤트속성에 사용자가
+        원하는 기능(function)을 정의해야 한다.
+
+        window객체의 onload는 window 객체가 로드가 완료가 되면 자동으로 할당된 함수를 실행한다.
+        즉, html페이지에 존재한 모든 태그가 메모리에 로딩이 완료되는 직후에 onload에 할당된
+        함수를 실행하라는 의미이다.
+
+        */
+  window.onload = function() {
+    alert('1st prosess')
+  }
+  </script>
+</head>
+<body>
+<h1>2nd prosess</h1>
+<script>alert ('2nd prosess')</script>
+<h1>3nd prosess</h1>
+<script>alert ('3nd prosess')</script>
+</body>
+</html>

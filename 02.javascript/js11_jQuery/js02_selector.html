@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script>
+    $(function() {
+      $('h1').css('color','red' ); //getElementTagName('h1').css()
+      $('p').css('color', 'green');
+      $('#target').css('color', 'orange');
+      $('h1#target').css('color', 'mediumseagreen');
+
+    });
+  </script>
+  <!-- <style>
+    h1 {color: red;}
+    h1#target {color: green;}
+  </style> -->
+</head>
+<body>
+  <h1>토트넘 ‘잇몸 미소’ 콘테 ‘이젠 안녕’</h1>
+  <p>2022~23 유럽축구연맹 챔피언스리그(UCL) 16강 탈락으로 사실상 올 시즌 무관이 확정된 토트넘 홋스퍼가 안토니오 콘테 감독의 후임자를 물색하고 나섰다. 마우리시오 포체티노 전 토트넘 감독과 루이스 엔리케 전 바르셀로나 감독 등이 후보로 거론되고 있다.</p>
+  <p id="target">또 이 매체는 "김민재는 페네르바체 시절부터 EPL 이적을 목표로 삼았다. 지금 김민재는 맨유로 이적을 준비 중이다. EPL 빅클럽 맨유는 김민재에게 5000만 유로(698억원)의 이적료를 지불하기로 결정했다"고 보도했다.</p>
+  <h1 id="target">토트넘 ‘잇몸 미소’ 콘테 ‘이젠 안녕’</h1>
+</body>
+</html>

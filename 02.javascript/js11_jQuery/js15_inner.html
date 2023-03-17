@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+    //html(), text(), remove(), empty()
+    $(() => {
+      // 1. html() : 문서객체
+      let h1 = $('h1').html()
+      // alert(h1);
+      // alert(typeof h1); // string
+
+      // 2. text() : 문서객체의 내부 문자열
+      let h1_text = $('h1').text() // h1 전체 태그의 문자열을 가져오기
+      alert(h1_text)
+
+      // 3. html() : 문서객체에 추가하기
+      $('div.html').html('<h1>$().html()메서드</h1>');
+
+      // 4. text() : 문서객체 내부에 문자열 추가
+      $('div.text').text('<h4>$().text()메서드</h4>');
+
+      // 5. remove() : 문서객체 삭제 
+      $('h1').first().remove();
+      
+      // 6. empty() : 문서객체 내부문자열을 비움
+      $('div.text').first().empty();
+    })
+  </script>
+</head>
+<body>
+  <h1>header-1</h1>
+  <h1>header-2</h1>
+  <h1>header-3</h1>
+
+  <div class="html"></div>
+  <div class="html"></div>
+  <div class="html"></div>
+
+  <div class="text"></div>
+  <div class="text"></div>
+  <div class="text"></div>
+</body>
+</html>

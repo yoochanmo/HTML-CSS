@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <p>새로고침을 해보세요! </p>
+    <script>
+      /* 웹브라우저를 새로고침을 하면 랜덤하게 배경색 변하는 함수
+       */
+
+      function random(number) {
+        return Math.floor(Math.random() * number);
+      }
+      function 배경색변경함수() {
+        // 실행할 문장
+        // console.log(`배경색변경하기!!!`);
+        const randomColor = `rgb(${random(255)}, ${random(255)}, ${random(
+          255
+        )})`;
+        document.body.style.backgroundColor = randomColor;
+      }
+
+      배경색변경함수(); // 함수를 호출
+    </script>
+  </body>
+</html>

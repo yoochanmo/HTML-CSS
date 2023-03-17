@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*
+    함수(function)란?
+
+    1. 함수는 기본적으로 호출된 곳으로 처리결과를 전달해 주는 기능을 한다.
+    2. 함수의 호출은 '함수명()'의 형태로 호출한다.
+    3. 함수의 소괄호안에는 함수로 임의의 값을 전달하는 매개변수(매개값, 인자, 파라미터...)가
+      있을 수도 있고 없을 수도 있다.
+    4. 사용자함수의 정의방법
+        1)익명함수 : 이름이 없는 함수 : function() {....}
+        2)선언함수 : 이름이 있는 함수 : function 함수명(매개변수...) {....}
+
+    내장함수와 사용자(정의)함수
+
+    1. 내장함수 : JavaScript에서 기본적으로 제공해 주는 함수를 내장함수라 한다.
+        ex) alter, prompt, confirm....
+    2. 사용자정의함수
+        
+
+    */
+   //익명함수
+  let fn01 = function() {
+    // 실행할 문장....
+    return '반환된 값';
+  };
+  let result = fn01();
+  console.log(typeof fn01, result);
+  console.log(`${fn01()}`);
+
+  //1.
+  for (let i = 0; i < 5; i++) {
+  for (let j = 0; j <= i; j++) {
+    document.write('*')
+  }
+  document.write('<br>');
+}
+document.write('<hr>');
+
+  //2.
+  for(let i = 0; i < 5; i++)  {
+  for(let j = 4; j > i; j--)  {
+    document.write('&nbsp');
+  }
+  for(let j = 0; j <= i; j++) {
+    document.write('*');
+  }
+  document.write('<br>');
+}
+document.write('<hr>');
+  //3.
+  for (let i = 0; i < 5; i++) {
+  for (let j = 5; j > i; j--) {
+    document.write('*');
+  }
+  document.write('<br>');
+}
+document.write('<hr>');
+  //4.
+  for(let i = 0; i < 5; i++)  {
+  for(let j=0; j <= i; j++)  {
+    document.write('&nbsp');
+  }
+  for(let j=5; j > i; j--)  {
+    document.write('*');
+  }
+  document.write('<br>');
+}
+document.write('<hr>');
+  //5.
+for(let i = 0; i < 5; i++){
+for(let j = 4; j > i; j--){
+  document.write('&nbsp');
+}
+  for(let j = 0; j <= i; j++){
+    document.write('*');
+  }
+  for(let j = 1; j <= i; j++ ){
+    document.write('*');
+  }
+    document.write('<br>');
+}
+document.write('<hr>');
+
+  //6.
+for(let i = 0; i < 5; i++){
+for(let j = 0; j < i; j++){
+  document.write('&nbsp');
+}
+for(let j = 5; j > i; j-- ){
+  document.write('*');
+}
+for(let j= 4; j > i; j--){
+  document.write('*');
+}
+  document.write('<br>');
+}
+document.write('<hr>');
+  //7.
+  for(let i = 0; i < 5; i++){
+for(let j = 4; j > i; j--){
+  document.write('&nbsp');
+}
+  for(let j = 0; j <= i; j++){
+    document.write('*');
+  }
+  for(let j = 1; j <= i; j++ ){
+    document.write('*');
+  }
+    document.write('<br>');
+}
+for(let i = 0; i < 5; i++){
+for(let j = 0; j < i; j++){
+  document.write('&nbsp');
+}
+for(let j = 5; j > i; j-- ){
+  document.write('*');
+}
+for(let j= 4; j > i; j--){
+  document.write('*');
+}
+  document.write('<br>');
+}
+
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

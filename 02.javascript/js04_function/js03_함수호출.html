@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 1. 선언함수
+    // function 함수() {document.write ('<h3>1st 함수 호출!!</h3>')}
+    // function 함수() {document.write ('<h3>2nd 함수 호출!!</h3>')}
+    // 함수() // ???
+  </script>
+  <script>
+  //   // 2. 익명함수
+  //   var 함수 = function () {document.write ('<h3>1st 함수 호출!!</h3>')}
+  //   var 함수 = function () {document.write ('<h3>2nd 함수 호출!!</h3>')}
+  // 함수();
+  </script>
+  <script>
+    // 3. 익명  - 호이스팅
+    // 함수(); //에러;
+    // var 함수 = function () {document.write ('<h3>1st 함수 호출!!</h3>')}
+    // var 함수 = function () {document.write ('<h3>2nd 함수 호출!!</h3>')}
+  </script>
+  <script>
+    // 4. 선언 - 호이스팅
+    함수(); //에러;
+    function 함수 () {document.write ('<h3>선언 함수 호이스팅 :1st 함수 호출!!</h3>')}
+    function 함수 () {document.write ('<h3>선언 함수 호이스팅 :2nd 함수 호출!!</h3>')}
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

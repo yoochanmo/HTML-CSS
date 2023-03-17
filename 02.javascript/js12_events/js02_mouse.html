@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+    // mousedown, mouseup
+    $(function() {
+      let canvas = document.getElementById('canvas');
+      let context = canvas.getContext('2d');
+
+      $('canvas').on({
+        mousedown: function(e) {
+          let position = $(this).offset(); //현재 마우스의 x, y 좌표를 리턴
+          let x = e.pageX - position.left;
+          let y = e.pageY - position.top;
+
+          //선그리기
+          context.beginPath();
+          context.moveTo(x, y);
+        },
+        mouseup: function(e) {
+          let position = $(this).offset();
+          let x = e.pageX - position.left;
+          let y = e.pageY - position.top;
+
+          context.lineTo(x, y);
+          context.stroke();
+        },
+      })
+
+    })
+  </script>
+</head>
+<body>
+  <canvas id="canvas" width="700" height="400" style="border: 3px solid black;"></canvas>
+</body>
+</html>

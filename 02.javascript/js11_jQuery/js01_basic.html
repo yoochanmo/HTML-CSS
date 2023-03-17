@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script>
+    window.onload = () => {
+      document.write('window onload()<br>')
+    }  //오리지널
+    $(document).ready(() => {
+      document.write('$(document).ready()<br>')
+    }) //제이쿼리
+    
+    $(() => {
+      document.write('$()<br>')
+    }) //축약
+  </script>
+    
+</head>
+<body>
+
+</body>
+</html>

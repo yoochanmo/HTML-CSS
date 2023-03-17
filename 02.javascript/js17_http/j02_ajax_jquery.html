@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" onclick="getJSONData()">JSON Date 가져오기 JQuery</button>
+  <br><br>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <td rowspan="2">id</td>
+        <td rowspan="2">name</td>
+        <td rowspan="2">e-mail</td>
+        <td colspan="5">address</td>
+      </tr>
+      <tr>
+        <td>street</td>
+        <td>suite</td>
+        <td>city</td>
+        <td>zipcode</td>
+        <td>geo</td>
+      </tr>
+    </thead>
+    <tbody id="demo"></tbody>
+  </table>
+
+  <script>
+    function getJSONData(){
+      $.ajax({
+        url: 'https://jsonplaceholder.typicode.com/users',
+        type: 'get',
+        datatype: 'json',
+        success: users => {
+          $.each(users, (index, user) => {
+              $('#demo').append('<tr>'
+                + `<td>${user.id}</td>`
+                + `<td>${user.name}</td>`
+                + `<td>${user.email}</td>`
+                + `<td>${user.address.street}</td>`
+                + `<td>${user.address.suite}</td>`
+                + `<td>${user.address.city}</td>`
+                + `<td>${user.address.zipcode}</td>`
+                + `<td>${user.address.geo.lat}, ${user.address.geo.log}</td>`
+                + '</tr>')
+          })
+        },
+        error: () => alert("Sever Connetion fail")
+      })
+    }
+  </script>
+</body>
+</html>
+                

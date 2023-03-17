@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*
+      객체란(배열 vs 객체)?
+      ** callback, 생성자, 객체 **
+      객체란 속성과 메서드를 가지고 있는 참조자료형이다.**
+      
+      객체 { } 키와 값을 한쌍으로 갖는 자료형이다.
+
+      배열 [ ]은 값만 가지는 객체이다.
+    */
+  
+    console.log('배열 = ', typeof[]);
+    console.log('객체 = ', typeof{}); //key , value 한쌍으로 갖는 프로퍼티
+
+    // 객체
+    let obj1 = {};         // <-  ↓ 같은 의미
+    let obj2 = new Object(); //Object가 최상위
+    
+    //class와 object의 차이점은 class는 데이터가 없고, object는 데이터가 있다.
+    let person = {
+      name : '이강인',
+      age : 22,
+      speak : function() { console.log('공을 찹니다.');
+    }                 //객체
+    };
+    class Person{
+      name;
+      age;
+      speak() {}
+
+
+      //constructor() {}  
+      constructor(name, age){
+        this.name = name;
+        this.age = age;
+      }
+    }                 //클래스
+
+    let hong = new Person();
+    let sonny = new Person('손흥민', 30);
+    let 민재 = new Person('김민재', 28);
+
+    console.log("객체({}) = ",person.name, person['age']);
+    console.log("객체(new/기본) = ",hong.name, hong['age']);
+    console.log("객체(new/매개) = ",sonny.name, sonny['age']);
+    console.log("객체(new/매개) = ",민재.name, 민재['age']);
+    </script>
+  </head>
+<body>
+  
+</body>
+</html>

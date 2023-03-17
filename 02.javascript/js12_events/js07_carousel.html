@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+
+    }
+    li {
+      list-style: none;
+    }
+
+    a{
+      font-style: "D2Coding";
+      font-size: 12px;
+      color: white;
+      text-decoration: none;
+    }
+    #visual{
+      width: 500px;
+      margin: 0;
+      position: relative;
+    }
+    #pic {
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 1px 5px 10px 2px #666;
+    }
+    #pic > div {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: none;
+    }
+    #control {
+      position: absolute;
+      width: 100%;  
+      left: 0;
+      bottom: 30px;
+      text-align: center;
+    }
+    #control a {
+      display: inline-block;
+      width: 26px;
+      height: 26px;
+      background: #000;
+      color: #fff;
+      line-height: 26px;
+      font-style: 0.8em;
+      border-radius: 14px;   /*둥글게 깎는거*/
+      margin: 0 2px;
+    }
+#control a.on {
+  background: #ff6600;
+}
+img {
+  width: 500px;
+  height: 250px;
+}
+
+
+      
+  </style>
+
+
+
+  <script>
+$(() => {
+  $('#control a').click(function() {
+    let num = Number($(this).text()) -1; 
+    $(this).addClass('on')
+    .siblings().removeClass('on');
+    $('#pic > div')
+    .filter(':visible')
+    .stop(true)
+    .fadeOut(350)
+    .end()
+    .eq(num)
+    .stop(true)
+    .fadeIn(350);
+  })
+  $('#control a:first').addClass('on').add('#pic > div:first').show()
+})
+
+  </script>
+</head>
+<body>
+  <div id="visual">
+    <div id="pic">
+      <div><a href="#"><img src="./images/KakaoTalk_20230314_095812377_01.jpg" alt="1"></a></div>
+      <div><a href="#"><img src="./images/KakaoTalk_20230314_095812377_02.jpg" alt="2"></a></div>
+      <div><a href="#"><img src="./images/KakaoTalk_20230314_095812377_03.jpg" alt="3"></a></div>
+      <div><a href="#"><img src="./images/KakaoTalk_20230314_095812377_04.jpg" alt="4"></a></div>
+    </div>
+    <div id="control">
+      <a href="javascript:;">1</a>
+      <a href="javascript:;">2</a>
+      <a href="javascript:;">3</a>
+      <a href="javascript:;">4</a>
+    </div>
+  </div>
+</body>
+</html>

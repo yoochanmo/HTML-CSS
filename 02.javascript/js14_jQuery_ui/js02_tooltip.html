@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/Flick/jquery-ui.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>  
+  <title>Document</title>
+  <style>
+    h1 {
+      text-align: center;
+    }
+    #button {
+      padding: 5px;
+      margin: 0;
+      text-align: center;
+    }
+  </style>
+  <script>
+    $(function(){
+      $('#button').hover(
+        function(){$(this).addClass('ui-state-hover')},
+        function(){$(this).removeClass('ui-state-hover')}
+      )
+      
+      $('#button').click(function(){
+          $(this).toggleClass('ui-date-active')
+      })
+      $('h1').hover(
+        function(){$(this).addClass('ui-state-hover')},
+        function(){$(this).removeClass('ui-state-hover')}
+      )
+    })
+  </script>
+</head>
+<body>
+  <div id="button" class="box ui-state-default ui-coner-all">
+    <p>제라드를 좋아하지 않던 한 누리꾼의 글에서 이 별명은 시작됐다.
+
+
+
+      당시 누리꾼은 제라드를 "실력은 별로인데 이름이 멋있어 유명해졌다"라며 "이름이 훔바훔바였다면 지금처럼 인기가 많지 않았을 것"이라는 글을 남겼다.
+      
+      
+      
+      별 반응이 없던 이 글은 2014년 첼시와의 경기에서 제라드가 미끄러지며 치명적인 실수를 저지르자 제라드를 놀리기에 적당한 소재로 발굴되어 현재까지 널리 사용되고 있다.
+      
+      
+      
+      팀의 암흑기에도 변치 않는 실력으로 리버풀의 중심이 되어주었던 영원한 주장 제라드가 놀림감으로 전락해버렸다는 사실은 많은 리버풀 팬들에게는 뼈 아픈 부분이다.
+      
+      </p>
+  </div>
+  <button id="button" class="box ui-state-default ui-coner-all">Button</button>
+</body>
+</html>

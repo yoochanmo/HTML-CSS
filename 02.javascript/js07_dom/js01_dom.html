@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*
+      문서객체모델(DOM, Document Objet Model)
+
+      웹브라우저가 html페이지를 인식하는 방식이며 좁은 의미로는 document객체와
+      관련된 객체를 말한다. 문서객체를 이용하면 html페이지에 태그(요소, element)를
+      추가, 수정, 삭제할 수가 있다.
+
+      문서객체는 텍스트노드를 갖는 객체(h1, button....)와 텍스트노드를 갖지 않는 
+      객체(body, input..)가 있다.
+
+      1. 속성
+        a. innerHTML : 태그 내부의 문자를 조작
+        b. style     : 태그의 스타일을 조작
+        c. setAttribute(<속성이름>, <속성값>) : 태그의 속성을 설정
+        d. getAttribute(<속성이름>) : 태그의 속성을 읽기
+
+      2. 메서드
+
+        a. createElement(태그) : 정의된 태그(문서객체)를 생성
+        b. createTextNode(문자열) : TextNode를 생성
+        c. appendChild(태그) : 지정된 태그를 자식태그로 추가
+        d. getElementById(id) : id속성을 가진 태그(문서객체)를 선택
+        e. getElementByClass(클래스) : class속성을 이용해서 문서객체를 선택 -- [클래스의 전부를 가져옴]
+        f. querySelector(선택자) : 선택자를 이용해서 문서객체를 선택  -- [맨 처음것만 가져옴]
+        g. querySelectorAll(선택자) : 선택자를 이용해서 복수개의 문서객체를 선택 -- [전체를 가져옴]
+    */
+  window.onload = () => {
+    document.write('<h1>Hello Dom!!</h1>');
+
+    let header = document.createElement('h1');
+    let text = document.createTextNode('Hello Dom2~~~~~~~~~~~~~');
+
+    header.appendChild(text);
+    document.body.appendChild(header);
+
+    for(let key in header){
+      document.write(`${key} = ${screen[key]}<br>`)
+    }
+  }
+  </script>
+</head>
+<body>
+  <h1 class="aaa"></h1>
+  <h1 class="aaa"></h1>
+  <h1 class="aaa"></h1>
+  <h1 class="aaa"></h1>
+  <h1 class="aaa"></h1>
+</body>
+</html>

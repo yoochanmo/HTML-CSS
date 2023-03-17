@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+    /* jQuery Effect
+
+      A . effect method
+
+      show () : 문서객체를 보이게 하기
+      hide () : 문서객체를 보이게 하기
+      toggle () : show() hide() 번걸아 수행
+      slidedown () : 슬라이드 효과 보이기
+      slideup ()  : 슬라이드 효과 감추기
+      slideToggle () : slidedown,slideup 번갈아 수행
+      fadein () : 서서히 보이기
+      fadeOut () : 서서히 감추기
+      fadeToggle () : fadein, fadeout 번갈아 수행
+
+      B . effcet 메서드 4가지 형태
+
+        1 . $(선택자).method()
+        2 . $(선택자).method(speed) : slow, nomal, fast, 숫자(ms)
+        3 . $(선택자).method(speed, 콜백함수) : 효과가 수행되는 동안에 수행할 함수(callback 함수)를 지정, 함수수행결과가 리턴
+        4 . $(선택자).method(speed, easing, 콜백함수) : easing 애니메이션효과 적용
+
+    */
+  $(function() {
+    $('button').click(() => {
+      $('.page').slideToggle(400, function() {alert('Toggle Effect')});
+    })
+  })
+  </script>
+</head>
+<body>
+  <button>jQuery Effect - toggle</button>
+  <div class="page">
+    <h1>'큰일 날 뻔했다!' 맨유, '또 부상' 포그바에게 주급 40만 파운드 제안</h1>
+    <p>천만다행이다. 지난 시즌을 끝으로 계약이 만료된 폴 포그바를 향해 맨체스터 유나이티드가 재계약을 제안했다는 사실이 전해졌다. 그것도 주급 40만 파운드(약 6억 3500만 원). 만약 포그바가 맨유에 남았다면 '최악의 먹튀'가 될 뻔했다.</p>
+  </div>
+</body>
+</html>

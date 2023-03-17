@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <title>Parsing</title>
+  <script>
+    // jQuery 파싱
+    // 1 . jQuery.pathJSON() - JSON 형식의 문자열을 JavaScript객체로 변환
+    // 2 . jQuery,parseXML() - XML 형태의 문자열을 XML Document Type으로 변환
+    // 3 . jQuery.parseHTML() - HTML 형태의 문자열을 HTML 문서객체로 변환
+    // jQuery API : 
+    // http://api.Jquery.com/jQuery.parseJSON
+    // http://api.Jquery.com/jQuery.parseXML
+    // http://api.Jquery.com/jQuery.parseHTML
+
+    let xml = '';
+    xml += '<members>';
+    xml += ' <member>';
+      xml += '   <name>홍길동</name>';
+      xml += '   <age>1000</age>';
+      xml += ' </member>';
+    xml += ' <member>';
+      xml += '   <name>손흥민</name>';
+      xml += '   <age>31</age>';
+      xml += ' </member>';
+    xml += ' <member>';
+      xml += '   <name>이강인</name>';
+      xml += '   <age>22</age>';
+      xml += ' </member>';
+      xml += '</members>';
+
+
+
+    $(() => {
+      //parseXML() : string을 XML로 변환해 주는 함수
+      let xmlDoc = $.parseXML(xml);
+      // alert(xmlDoc, typeof xmlDoc);
+      // xml 객체는 find(), each()
+      $(xmlDoc).find('member').each(function(index){
+        let output = '';
+        output += '<div>'
+        output += '<h1>' + $(this).find('name').text() + '</h1>';
+        output += '<h1>' + $(this).find('age').text() + '</h1>';
+        output += '</div>'
+        document.body.innerHTML += output;
+      })
+    })
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

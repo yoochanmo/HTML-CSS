@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" onclick="getJSONData()">JSON Date 가져오기 XHR</button>
+  <br><br>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <td rowspan="2">id</td>
+        <td rowspan="2">name</td>
+        <td rowspan="2">e-mail</td>
+        <td colspan="5">address</td>
+      </tr>
+      <tr>
+        <td>street</td>
+        <td>suite</td>
+        <td>city</td>
+        <td>zipcode</td>
+        <td>geo</td>
+      </tr>
+    </thead>
+    <tbody id="demo"></tbody>
+  </table>
+  <script>
+    function getJSONData(){
+      const req = new XMLHttpRequest();
+      req.onreadystatechange = (e) => {
+          if(req.readyState === 4){
+            if(req.status === 200) {
+              let users = JSON.parse(req.responseText);
+              let output = '';
+
+              for(i in users){
+              output += '<tr>'
+              +`<td>${users[i].id}</td>`
+              +`<td>${users[i].name}</td>`
+              +`<td>${users[i].email}</td>`
+              +`<td>${users[i].address.street}</td>`
+              +`<td>${users[i].address.suite}</td>`
+              +`<td>${users[i].address.city}</td>`
+              +`<td>${users[i].address.zipcode}</td>`
+              +`<td>${JSON.stringify(users[i].address.geo)}</td>`
+              +'</tr>'
+              }
+              document.querySelector('#demo').innerHTML = output;
+            }
+          }
+      }
+      req.open("GET","https://jsonplaceholder.typicode.com/users",true)
+      req.send();
+    }
+  </script>
+</body>
+</html>

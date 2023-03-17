@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    let date1 = new Date();
+
+    // 1 . 문자열을 이용한 객체 생성
+    let date2 = new Date('Dec 9 2023');
+    let date3 = new Date('March 9 2023 03:09:03');
+    document.write(date2, '<br>');
+    document.write(date3, '<br>');
+
+    // 2 . 숫자를 이용한 객체 생성
+    date4 = new Date('2023, 3, 9, 03:33:44');
+    document.write(date4, '<br>');
+    
+    // 3 . 메서드
+    // getXxxx, setXxx 메서드
+    
+    //날짜연산
+    let now = new Date()
+    let bef = new Date(2023, 03, 01);
+
+    document.write(`${now.getTime() - bef.getTime()}ms, <br>`);
+    let interval = now.getTime() - bef.getTime();
+    document.write(`${Math.floor(interval / (1000 * 60 * 60 * 24))}일 <br>`);
+
+    //날짜간격을 구해주는 메서더
+    Date.prototype.getInteval = function(beforedate){
+      let interval;
+
+      //양수처리
+      if(this > beforeDate){
+        interval = this.getTime - beforeDate.getTime();
+      } else{
+        interval = beforeDate.getTime() - this.getTime();
+      }
+      return Math.floor(interval / 1000 * 60 * 60 * 24)
+    }
+
+    document.write(now.getInteval(bef) + ' 일<br>');
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

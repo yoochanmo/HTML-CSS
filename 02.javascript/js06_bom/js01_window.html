@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>    
+  /*
+    브라우저객체모델(Browser Object Model)
+
+    BOM은 웹브라우저와 관련된 객체의 집합객체를 의미한다.
+    BOM은 WINDOW > SCREEN, Location, Navigator, History, document가 있다.
+    간단하게 문서객체모델(DOM, Document Object Model)이라 통합해서 부르기도 한다.
+
+  */
+    document.write(typeof window + ' = ' + window, '<br>');
+
+    for(let key in window){
+      document.write(`${key} = ${window[key]}<br>`)
+    }
+    alert('경고창 함수는 window객체의 메서드중 하나입니당.');
+      /*
+      window 객체는 브라우저 기바의 모델에서 최상위 객체이다.
+      alert, prompt 함수등은 모두 window 객체의 메서드 이다.
+
+      window 객체의 메서드
+
+      1. open() : 새로운 window객체를 생성
+                  a) url : url 주소
+                  b) width, height : 윈도우의 크기
+                  c) child : 자식창(별도의 창)
+                  d) location, menubar, resizeable, status, toolbar (yes, no/ 1, 0)
+      2. moveBy(x, y) : 윈도우를 상대 위치로 이동
+      3. moveTo(x, y) : 윈도우를 절대 위치로 이동
+      4. resizeBy(x, y) : 윈도우를 상대적으로 크기 조정
+      5. resizeRo(x, y) : 윈도우를 절대적으로 크기 조정
+      6. scollBy(x, y) : 스크롤바를 상대 위치로 이동
+      7. scollTo(x, y) : 스크롤바를 절대 위치로 이동
+      8. focus() : 윈도에 초점을 이동
+      9. blur() : 윈도우에서 초점을 제거
+      10. close : 윈도우를 닫음
+        */
+
+      // window.open('http://www.youtube.com', 'child','width = 200 height = 200');
+      let childWindow = window.open('', '', 'width=300 height=300');
+      childWindow.moveTo(0,0);
+      childWindow.document.write('<h1>window.open()메서드(</h1>')
+      // 실습. childWindow를 1초마다 x,y 좌표를 10씩 이동하기
+      // setInterVal() 함수를 이용
+
+      setInterval(function() {
+        childWindow.moveBy(80,40).document.write('<h1>window.open()메서드(</h1>') //생성자 함수(new Date)는 대문자로 시작하는것이 관례
+  }, 1500); // 1000ms = 1초
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

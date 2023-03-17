@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 1. 객체의 선언과 속성 정의하기
+    let student = {
+      //name : '홍길동',
+      //age : 27,
+      //addr : '주소'
+    };
+      
+
+    // 1) 속성추가
+    student.name = '이강인';
+    student.sno = 19;
+    student.gender = '남자';
+
+    for(let key in student){
+      document.write(`${key} = ${student[key]}<br>`)
+    }
+
+
+
+
+    // 2) 객체 메서드 추가/재정의(1)
+    //    a. 상속받은 메서드 추가 재정의(toString())
+      console.log(student.toString());
+      student.toString = function(){
+        return `이름=${student.name}, 번호=${student.sno}, 성별=${student.gender}`;
+      };
+      console.log(student.toString());
+
+      //    b. 객체 메서드 추가하기
+      student.study = function(course) {
+        return `${this.name}이(가) ${course}과목을 공부합니다.`;
+      }
+      console.log(student.study('영어'));
+      console.log(student.study('수학'));
+      console.log(student.study('과학'));
+
+      // 3. 속성 및 메서드 삭제하기
+      delete(student.name);
+      delete(student.study);
+
+      for(let key in student){
+      document.write(`${key} = ${student[key]}<br>`)
+    }
+    //상속받은놈은 재정의 가능 메소드추가 가능 속성도 추가 가능 삭제도 가능
+    //하지만 그렇게 사용하지 말어라.
+    
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

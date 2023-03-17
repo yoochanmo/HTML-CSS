@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .clock {
+      width: 200px;
+      height: 50px;
+      text-align: center;
+      color: #f4f4f4;
+      background-color: black;
+    }
+    #clock {
+      color: #f0c420;
+      font-size: 20px;
+    }
+    #clockday {
+      font-size: 0.5em;
+      color: mediumaquamarine;
+    }
+  </style>
+</head>
+<body>
+    <div class="clock">
+        <div id="clock">00:00</div>
+        <div id="clockday">00/00/00</div>
+    </div>
+
+    <script>
+      function Clock() {
+        let date = new Date();
+        let YYYY = String(date.getFullYear());
+        let MM = String(date.getMonth());
+        let DD = Zero(date.getDate());
+        let hh = Zero(date.getHours());
+        let mm = Zero(date.getMinutes());
+        let ss = Zero(date.getSeconds());
+        let Week = Weekday();
+
+        // 출력함수호출
+        Write(YYYY, MM, DD, hh, mm, ss, Week);
+
+        // 요일을 리턴해 주는 함수
+        function Weekday() {
+          let Week = ['일','월','화','수','목','금','토'];
+          let Weekday = date.getDay();
+          return Week[Weekday];
+        }
+
+        // 0을 채워주는 함수 : 1의 자리수가 나올 때 0을 채우는 함수
+        function Zero(num) {
+          return (num <10 ? '0'+num : '' + num);
+        }
+
+        // 날짜와 시간을 출력해 주는 함수
+        function Write(YYYY, MM, DD, hh, mm, ss, Week) {
+          let ClockDay = document.getElementById('clockday');
+          let Clock = document.getElementById('clock');
+          ClockDay.innerText = YYYY + '.' + MM + '.' + DD + ' . '+ `${Week}요일`;
+          Clock.innerText = `${hh}:${mm}:${ss}`; 
+        }
+      }
+      setInterval(Clock, 1000);
+  </script>
+
+</body>
+</html>

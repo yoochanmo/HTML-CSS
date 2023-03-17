@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/Flick/jquery-ui.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>  
+  <title>Document</title>
+  <style>
+    label, input {display: block;}
+    input.text{margin-bottom: 12px; width: 95%; padding: .4em;}
+    fieldset {padding: 0; border: 0; margin-top: 25px;}
+    h1 {font-size: 1.2em; margin: 0.6em 0;}
+    div#users-contain {width: 350px; max-width: 20px 0;}
+    div#users-contain table {margin: 1em 0; border-collapse: collapse; width: 100%;}
+    div#users-contain table td, div#users-contain table th {
+      border: 1px solid #eee;
+      padding: 0.6em 10px; text-align: left;
+    }
+    .ul-dialog .ui-state-error {place-self: .3em;}
+    .validateTips {border: 1px solid transparent; padding: .3em;}
+  </style>
+  <script>
+    $(function(){
+      let dialog, form, name = $('#name'),email = $('#email'), password = $('#password'),
+      allFields = $([]).add(name).add(email).add(password)
+      // allfields = [name,email,password]
+      function updateTips(){}
+      function CheckLength (){}
+      function checkRegexp(){}
+      function addUser(){
+        let valid = true;
+        allFields.removeClass('ui-state-error');
+
+        if(valid) {
+          $('#users tbody').append(
+            `<tr><td>${name.val()}</td>` +
+            `<td>${email.val()}</td>` +
+            `<td>${password.val()}</td></tr>`
+          )
+          dialog.dialog('close');
+        }
+        return valid;
+      }
+      dialog = $('#dialog-form').dialog({
+        autoOpen: true,
+        height: 500,
+        width: 400,
+        modal: true,
+        buttons:{
+          "add user" : addUser,
+          cancel:function(){
+            dialog.dialog('close')
+          },
+          close:function(){form[0].reset();
+            allFields.removeClass('ui-state-error');
+            dialog.dialog('close');
+          }
+        }
+      })
+        form = dialog.find('form').on('submit',function(e){
+          e.preventDefault();
+          addUser();
+        })
+
+        $('#create-user').button().on('click',function(){
+          dialog.dialog('open');
+        })
+    })
+  </script>
+</head>
+<body>
+  <div id="dialog-form" title="회원등록하기">
+    <p class="validateTips">폼의 모든 필드는 필수입력사항 입니다!</p>
+
+    <form>
+      <fieldset>
+        <label for="name">회원명</label>
+        <input type="text" name="name" id="name" value="홍길동" 
+          class="text ui-widget-content ui-corner-all">
+        <label for="name">이메일</label>
+        <input type="email" name="email" id="email" value="hong@gmail.com" 
+          class="text ui-widget-content ui-corner-all">
+        <label for="name">비밀번호</label>
+        <input type="password" name="password" id="password" value="12345" 
+          class="text ui-widget-content ui-corner-all">
+      
+        <input type="submit" tabindex="-1" 
+          style="position: absolute; top: -1000px">  
+      </fieldset>
+    </form>
+  </div>
+
+    <div class="users-contain ui-widget">
+      <h1>회원목록</h1>
+      <table id="users" class="ui-widget ui-widget-content">
+        <thead>
+          <tr class="ui-widget-headr">
+            <th>이름</th>
+            <th>이메일</th>
+            <th>비밀번호</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tf>
+            <td>홍길동</td>
+            <td>hong@gmail.com</td>
+            <td>12345</td>
+          </tf>
+        </tbody>
+      </table>
+    </div> 
+  <button id="create-user">신규회원등록</button>
+</body>
+</html>

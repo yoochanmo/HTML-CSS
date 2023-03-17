@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*
+      JSON객체
+
+      JSON(JavaScript Object Notation)은 자바스크립트의 객체형태의 문자열이다.
+      "속성(키)" : 값 or 배열형태를 갖는 데이터형태이다.
+
+      1 . Stringyfy() : 자바스크립트의 객체를 문자열로 변화하는 함수
+      2 . pase()      : JSON 객체를 자바스크립트의 객체로 변화하는 함수
+    */
+
+    let person = {
+      name : "손웅정",
+      age : 56,
+      gender : "남자",
+      addr : "월드클래스 아님.",
+      arr : [1,2,3,4],
+      data : {a : "aaa", b : "bbb"},
+      fn : function() { console.log("JSON의 함수")}
+    }
+    document.write(typeof person,'<br>')
+    let str = JSON.stringify(person);
+
+    document.write(typeof str, str,'<br>')
+
+    //JSON형태의 문자열을 JavaScript의 객체로 변환
+    let obj = JSON.parse(str);
+    document.write(typeof obj, obj.name,'<br>')
+
+    
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    try {
+        console.log(nothing);
+      
+    } catch (e) {
+      // e.name : 에러이름, 정의되지 않은 변수의 에러는 referencError
+      // e.message : 에러의 상세내용
+      // e.stack : 현재 호출된 주소
+      document.write(e.name, '<br>');
+      document.write(e.message,'꺼져', '<br>');
+      document.write(e.stack, '<br>');
+    }
+
+    //예외발생 throw
+
+    try {
+      const val = parseInt(prompt('짝수 입력좀'));
+      if(val % 2 != 0){
+        throw new Error('짝수 아닌데? ㅋㅋ');
+      }
+    } catch (e) {
+      alert(e.message);
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

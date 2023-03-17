@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+    //preventDefault()메서드로 a태그의 기본 이벤트를 제거
+    $(function(){
+      $('a').click(function(e){
+        $(this).css('background-color', 'blue');
+        event.stopPropagation();
+        event.preventDefault();
+      })
+    })
+  </script>
+</head>
+<body>
+  <div style="border: 2px solid black;">
+    <h1 style="border: 10px solid red;">
+      <a href="http://naver.com" style="border: 2px solid blue;">NAVER</a>
+    </h1>
+  </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    td {
+      font-size: 0.5px;
+      padding: 5px;
+      border: 1px solid rgb(224, 29, 29) ;
+
+    }
+  </style>
+</head>
+<body>
+  <h1>자리 배치도</h1>
+  <script>
+    let i, j;
+    let mem = prompt('총원을 입력하세요', '총원');
+    let count = prompt('한줄에 몇명씩 앉는지 입력하세요.', '몇 명');
+    document.write('총원은' + mem + '명입니다.');
+    document.write('한줄에' + count + '명입니다.');
+
+    
+    if(mem % count == 0){
+      rowNum = parseInt(mem/count);
+      rowNum = parseFloat(mem/count);
+      document.write('<table>');
+        for( i = 0; i < rowNum; i++){
+          document.write('<tr>');
+            for(j = 1; j <= count; j++){
+             seatNum = i *  count + j;
+              if(seatNum > mem)
+              break;
+              document.write("<td> 좌석" + seatNum + "</td>");
+            }
+            document.write('</tr>');
+          }
+        }else{
+          rowNum = parseInt(mem/count);
+          rowNum = parseFloat(mem/count);
+          document.write('<table>');
+            for( i = 0; i < rowNum; i++){
+              document.write('<tr>');
+                for(j = 1; j <= count; j++){
+                 seatNum = i *  count + j;
+                  if(seatNum > mem)
+                  break;
+                  document.write("<td> 좌석" + seatNum + "</td>");
+                }
+                document.write('</tr>');
+            }}
+              document.write('</table>');
+    
+
+    
+
+
+          
+
+    
+
+
+  </script>
+</body>
+</html>

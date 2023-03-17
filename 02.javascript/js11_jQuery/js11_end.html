@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <title>End</title>
+  <script>
+    // end () : 이전 함수로 되돌아가기
+    // 메서드체인과 end() 메서드를 이용해서 전단계로 돌아가서 
+    // 임의으 작업을 수행할 수 있게 한다.
+
+    $(() => {
+      // 실습 1. h1 전체의 배경색은 orangd
+      //      2. 짝수를 선택해서 글자색을 white
+      //      3. 홀수를 선택해서 글자색을 red
+      // $('h1').css('background','orange')
+      // $('h1:odd').css('color','white')
+      // $('h1:even').css('color','red')
+
+      $('h1').css('background','orange').filter(':even').css('color','white').end().filter(':odd').css('color','red');
+
+      //first(), last(), eq()
+
+    }) 
+  </script>
+</head>
+<body>
+  <h1>header-1</h1>
+  <h1>header-2</h1>
+  <h1>header-3</h1>
+  <h1>header-4</h1>
+</body>
+</html>

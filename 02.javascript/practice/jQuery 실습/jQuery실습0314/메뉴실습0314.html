@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/js06.css">
+</head>
+<body>
+  <button id="bttn">&#9776;</button>
+
+  <nav id="nav">
+    <ul>
+      <li><a href="#">JavaScript</a></li>
+      <li><a href="#">React.js</a></li>
+      <li><a href="#">Node.js</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    const bttn = document.querySelector('#bttn');
+    const nav = document.querySelector('#nav');
+
+    bttn.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      bttn.classList.toggle('active');
+    })
+  </script>
+
+</body>
+</html>

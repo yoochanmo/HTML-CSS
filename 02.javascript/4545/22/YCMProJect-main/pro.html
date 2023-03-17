@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>책 소개 웹사이트</title>
+</head>
+<body>
+    <h1>책 소개 웹사이트</h1>
+    <p>이 웹사이트에서는 여러 책을 소개합니다.</p>
+    <div id="books">
+        <!-- 여기에 자바스크립트로 책 정보를 동적으로 추가하세요 -->
+    </div>
+    <script>
+        // 책 정보를 배열로 저장
+var books = [
+    {
+        title: "해리포터와 마법사의 돌",
+        author: "J.K. 롤링",
+        cover: "https://upload.wikimedia.org/wikipedia/en/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg"
+    },
+    {
+        title: "어린왕자",
+        author: "생텍쥐페리",
+        cover: "https://upload.wikimedia.org/wikipedia/en/0/05/Littleprince.JPG"
+    },
+    {
+        title: "1984",
+        author: "조지 오웰",
+        cover: "https://upload.wikimedia.org/wikipedia/en/c/c3/1984first.jpg"
+    }
+];
+
+// 책 정보를 담을 div 요소를 찾기
+var booksDiv = document.getElementById("books");
+
+// 책 정보 배열을 반복하면서 div 요소에 추가하기
+for (var i = 0; i < books.length; i++) {
+    // 책 정보를 가져오기
+    var book = books[i];
+
+    // 책 정보를 표시할 div 요소 생성하기
+    var bookDiv = document.createElement("div");
+
+    // 책 제목을 표시할 h2 요소 생성하고 내용 추가하기
+    var bookTitle = document.createElement("h2");
+    bookTitle.textContent = book.title;
+
+    // 책 저자를 표시할 p 요소 생성하고 내용 추가하기
+    var bookAuthor = document.createElement("p");
+    bookAuthor.textContent = book.author;
+
+    // 책 표지를 표시할 img 요소 생성하고 속성 추가하기
+    var bookCover = document.createElement("img");
+    bookCover.src = book.cover;
+    bookCover.alt = book.title;
+
+    // 생성한 요소들을 bookDiv에 추가하기
+    bookDiv.appendChild(bookTitle);
+    bookDiv.appendChild(bookAuthor);
+    bookDiv.appendChild(bookCover);
+
+    // bookDiv를 booksDiv에 추가하기
+    booksDiv.appendChild(bookDiv);
+}
+    </script>
+
+</body>
+</html>

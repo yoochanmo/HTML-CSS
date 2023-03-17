@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* input에서 속성이 text인 태그의 배경색을 red */
+    input[type=text] {
+      background-color: red;
+    }
+    input[type=password] {
+      background-color: blue;
+    }
+    img[src$=jpg]{
+      border: 3px solid red;
+    }
+    img[src$=png]{
+      border: 3px solid blue;
+    }
+    img[src$=gif]{
+      border: 3px solid green;
+    }
+    img[src^=a]{
+      border: 10px solid green;
+    }
+    img[src*=ab]{
+      border: 10px dashed purple;
+    }
+      
+    /* input에서 속성이 password인 태그의 배경색을 blue */
+    /* 실습 src 속성이 jpg일 경우 : border 3px solid red */
+    /* 실습 src 속성이 png일 경우 : border 3px solid blue */
+    /* 실습 src 속성이 gif일 경우 : border 3px solid green */
+    /*  $= "aaa" : aaa로 끝나는
+        ^= "aaa" : aaa로 시작
+        *= "aaa : aaa를 포함 */
+  </style>
+</head>
+<body>
+  <input type="text"><br>
+  <input type="password"><br>
+<hr>
+  <img src="aaaa.jpg" alt="" width="200" height="200"><br>
+  <img src="abbb.png" alt="" width="200" height="200"><br>
+  <img src="accc.gif" alt="" width="200" height="200"><br>
+
+</body>
+</html>

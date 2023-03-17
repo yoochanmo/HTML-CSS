@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*
+      Math 객체는 수학과 관련된 속성과 메서드를 갖는 객체이다.
+
+      자바스크립트의 기본 내장객체중 유일하게 생성자함수를 사용하지 않는 객체이다.
+
+      즉, 객체를 생성하지 않아도 바로 사용할 수 있는 내장객체이다.
+
+      random()
+      round()
+      ceil() : 전달된 실수값을 기준으로 가장 가까운 큰 정수를 리턴 1.1 -> 2
+      floor() : 전달된 실수값을 기준으로 가장 가까운 작은 정수를 리턴 1.9 -> 1
+      trunc() : 전달된 실수값을 소수점이하는 버리는 함수 ex) 1.9 -> 1,   1.1 -> 1
+      max(값...) : 전달된 값들 중에서 가장 큰 값을 리턴
+      min(값...) : 전달된 값들 중에서 가장 작은 값을 리턴
+    */
+
+    document.write(Math.ceil(1.1), '<br>')
+    document.write(Math.floor(3.8), '<br>')
+    document.write(Math.trunc(1.32), '<br>')
+    document.write(Math.max(1,2,3,4,5), '<br>')
+    document.write(Math.min(-1,0,1,2,3,4,5), '<br>')
+    document.write(Math.round(1.5), '<br>')
+    document.write(Math.random(), '<br>')
+
+    Math.random()
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

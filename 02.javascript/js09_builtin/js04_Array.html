@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*
+      Array객체
+
+      1. 배열을 생성하는 방법
+        let arr1 = [] 초기화
+        let arr2 = [,1,2,3,4] 직접 값주기
+        let arr3 = Array();
+        let arr4 = Array(number) -> 지정된 number 갯수 크기를 갖는 빈 배열객체를 생성
+        let arr5 = Araay(any,...., any) -> 매개변수를 요소의 값으로 갖는 배열 객체 생성
+
+      2. 속성과 메서드
+        length : 배열의 크기
+        push() : 배열끝에 추가
+        pop()  : 맨뒤에 요소를 꺼내오고 동시에 삭제
+        slice(start, end) : start ~ end-1까지 새로운배열 객체를 반환, 원본은 변경 안됨 
+        join(문자열) : 배열요소를 문자열로 연결해서 하나의 문자열로 리턴
+        reverse() : 배열요소 뒤집기(원본변경)
+        sort() : 배열요소를 정렬(원본변경)
+
+      
+        map() : 원본배열을 가공을 해서 새로운 배열로 리턴
+        filter() : 원본배열에서 특정 조건에 맞는 요소만 모아서 새로운 배열로 리턴
+        reduce() : 주어진 요소들을 리듀서함수를 실행한 후에 하나의 결과값을 반환
+        forEach() : 요소들을 주어진 함수로 각각 전달
+        concat() : 배열을 합치는 함수
+
+    */
+    let arr1 = [1,2,3,4,5]
+    // 1. length
+    document.write(`1. arr1.length = ${arr1.length}<br>`)
+    document.write(`2. arr1.push(10) = ${arr1.push(10)}, ${arr1} <br>`);
+    document.write(`3. arr1.push({},'문자열',() => {}) = ${arr1.push({},'문자열',() => {})}, ${arr1} <br>`);
+    document.write(`4. arr1.pop() = ${arr1.pop()} => ${arr1} <br>`);
+    document.write(`5. arr1.slice(1,4) = ${arr1.slice(1,4)} => ${arr1} <br>`);
+    document.write('<hr>')
+    
+    let arr2 = [1,2,3,4,5]
+    document.write(`6. arr2.join('&') = ${arr2.join('&')} => ${arr2} <br>`);
+    document.write(`7. arr2.reverse() = ${arr2.reverse()} => ${arr2} <br>`);
+    document.write(`8. arr2.sort() = ${arr2.sort()} => ${arr2} <br>`);
+    
+    arr2 = [1,4,9,16];//() => {}
+    document.write(`9. arr2.map(() => {}) = ${arr2.map(function(a){return a * 2})} => ${arr2} <br>`);
+    document.write(`9. arr2.map(() => {}) = ${arr2.map(a => a * 2)} => ${arr2} <br>`);
+    document.write(`10. arr2.filter(() => {}) = ${arr2.filter(a => a > 4)} => ${arr2} <br>`);
+
+    // reduce : 1 + 4 + 9 + 16 = ??????????????????????????????????????????????
+    const 초기값 = 100;
+    const total = arr2.reduce( (이전값, 현재값) => 이전값 + 현재값, 초기값);
+    document.write(`11. arr2.reduce(() => {}) = ${total} <br>`);
+
+    //11. foreach
+    arr2.forEach((a) => {console.log(a)});
+    arr2.forEach (a => {
+      if(a > 4){
+        console.log(a);
+      }
+    });
+
+    document.write(`12. arr1.concat(arr2) = ${arr1.concat(arr2)} <br>`);
+
+    // sort : 객체의 정렬
+    function Student(name, kor, eng, mat){
+      this.name = name;
+      this.kor = kor;
+      this.eng = eng;
+      this.mat = mat;
+
+      this.getSum = function(){return this.kor + this.eng + this.mat}
+      this.getAvg = () => this.getSum / 4;
+      this.toString = function(){
+        return `이름=${this.name},국어=${this.kor},영어=${this.eng},수학=${this.mat}`
+      }
+    }
+    document.write('<hr>')
+
+    let students = [];
+    students.push(new Student('홍길동', 10,10,10))
+    students.push(new Student('손흥민', 20,10,10))
+    students.push(new Student('이강인', 30,10,10))
+
+    //1.이름순
+    
+    //2.총점순
+    students.sort((a, b) => {
+      return b.getSum() - a.getSum();
+    })
+    for(let i in students){
+      document.write(students[i].toString(),'<br>')
+    }
+    document.write('<hr>')
+
+    
+    //3. 2등까지만 출력
+    let std = students.sort((a, b) => {
+      return b.getSum() - a.getSum();
+    }).slice(0, 2);
+    for(let i in std){
+      document.write(students[i].toString(),'<br>')
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

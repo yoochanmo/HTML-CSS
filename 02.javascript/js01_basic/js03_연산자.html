@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*
+    연산자 
+    
+    1. 사칙연산   : +, -, *, /
+    2. 나머지연산 : %
+    */
+
+    // let a = 10 + 10;
+    // console.log('더하기', a, typeof(a));
+
+    // a = a - 5;
+    // console.log('빼기', a, typeof(a));
+
+    // a = a * 5;
+    // console.log('곱하기', a, typeof(a));
+
+    // a = a / 5;
+    // console.log('나누기', a, typeof(a));
+
+    // a = a % 6;
+    // console.log('나머지', a, typeof(a));
+
+    // const pi = 3.141592;
+    // console.log('PI', pi, typeof(pi));
+
+    // // 자바스크립트등의 프로그램언어에서는 
+    // // 정밀한 계산에서 실수연산은 적합하지가 않다.
+
+    // let b = 0.1 + 0.2;
+    // console.log('실수계산', b, typeof(b));
+
+    // b = (0.1 * 10) + (0.2 * 10);
+    // b = b / 10;
+    // console.log('실수계산', b, typeof(b));
+
+    // // 문자와 숫자의 연산 결과는?
+    // // 문자열의 연산은 더하기(+) 즉, 연결연산자이다.
+    // let str = '문자열';
+    // let num = 10;
+    // let result = str + num;
+    // console.log('문자열 연산의 계산결과는?', result, typeof(result));
+
+    // 실습. 두 사람의 나이를 입력 받아서 결과를 출력해 보세요
+    // prompt, document.write 함수를 이용
+    
+
+
+
+  </script>
+<script>
+let name1 = prompt('이름을 입력하세요', '홍길동');
+let age1 = prompt('나이를 입력하세요', 18);
+let name2 = prompt('이름을 입력하세요', '홍길순');
+let age2 = prompt('나이를 입력하세요', 20);
+console.log(name1,name2,age1,age2);
+console.log(typeof age1, typeof age2);
+sum = age1 + age2;
+console.log('두사람 나이 합 = ', sum);
+
+
+age1 = parseInt(age1);
+age2 = parseInt(age2);
+console.log(typeof age1, typeof age2);
+sum = age1 + age2;
+console.log('두사람 나이 합 = ', sum);
+
+document.write(`<h3>${name1}의 나이는 ${age1}살입니다.</h3>`);
+document.write(`<h3>${name2}의 나이는 ${age2}살입니다.</h3>`);
+document.write(`<h3>두사람의 나이 합은 ${sum}살입니다.</h3>`);
+document.write('<hr></hr>');
+ 
+
+
+</script>
+
+</head>
+<body>
+  <!-- <h3>홍길동의 나이 = ??</h3>
+  <h3>홍길순의 나이 = ??</h3>
+  <h3>두 사람 나의의 합 = ??</h3> -->
+
+  <h3 id="person1"></h3>
+  <h3 class="person2"></h3>
+  <h3 id="total"></h3>
+
+  <script>
+    let person1 = document.querySelector('#person1');
+    let person2 = document.querySelector('.person2');
+    let total = document.querySelector('#total');
+
+    person1.innerHTML = `2.${name1}의 나이는 ${age1}살입니다.`;
+    person2.innerHTML = `2.${name2}의 나이는 ${age2}살입니다.`;
+    total.innerHTML = `2.두사람의 나이 합은 ${sum}살입니다.`;
+  </script>
+</body>
+</html>

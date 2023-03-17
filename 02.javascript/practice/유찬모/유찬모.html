@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 실습 1. header3 태그를 클릭하면 해당 객체 삭제되는 이벤트  -->
+    <h3 id="header1">클릭하세요</h3>
+    <h3 id="header2">클릭하세요</h3>
+    <h3 id="header3" style="color : red;">클릭하세요</h3>
+    <hr>
+    <script>
+        //실습 1. header3 태그를 클릭하면 해당 객체 삭제되는 이벤트 
+        let header3 = document.querySelector('#header3');
+        header3.addEventListener("click", (e) => {
+        e.target.remove();
+    });
+        
+    </script>
+
+    <!-- 실습 2. 상세보기 버튼과 닫기 생성 후 닫기버튼을 클릭하면 숨겨지는 이벤트  -->
+    <div id = "practice">
+        <img id="image0" src="./images/rabbit.jpg" alt="" width="350px" height="300px"><br>
+        <div id="btn">
+        <button id="btn1">상세보기</button>
+        <button id="btn2">닫기</button>
+        </div>
+        <p id="writing">2023년1월 2일에 발매된 NewJeans의 첫 번째 싱글. The 1st Single 〈OMG〉 2023. 01. 02. (월) 18:00 발매</p>
+    </div>
+        <script>
+            //실습 2. 상세보기 버튼과 닫기 생성 후 닫기버튼을 클릭하면 숨겨지는 이벤트
+            document.getElementById("btn").style.display = "";
+            document.getElementById("writing").style.display = "";
+            
+            let newjeans = document.querySelector('img');
+            newjeans.addEventListener("click", () => {
+                document.getElementById("btn").style.display ="";
+            });
+            let btn1 = document.querySelector('#btn1');
+            btn1.addEventListener("click", () => {
+                document.getElementById("writing").style.display ="";
+            });
+            let btn2 = document.querySelector('#btn2');
+            btn2.addEventListener("click", () => {
+                document.getElementById("writing").style.display ="none";
+            });
+            </script>
+            <hr>
+<!-- 실습 3. 버튼 클릭시 클릭횟수 카운트 button-1 클릭시 버튼 2개 동시 카운트
+            button-2 클릭시 button-2의 횟수만 카운트
+            getElementById(), Number(), innerHTML, Number() 
+            button1.onclick -> button2.onclick을 호출  -->
+            <button id="btn3">button-1</button>
+            <button id="btn4">button-2</button>
+            <div id="result" style = "display: flex;">
+            <h2 id="result1" style="margin-left: 25px;">0</h2>
+            <h2 id="result2" style="margin-left: 60px;">0</h2>
+        </div>
+        <!-- 실습 3. 버튼 클릭횟수 카운트 -->
+        <script>
+            let btn3 = document.querySelector('#btn3');
+            let btn4 = document.querySelector('#btn4');
+            let result1 = document.querySelector('#result1');
+            let result2 = document.querySelector('#result2');
+            let x = 0;
+            let y = 0;
+
+            btn3.addEventListener("click", () => {
+                x++
+                y++
+                result1.innerHTML = x;
+                let resultNum1 = x;
+                result1.innerHTML = resultNum1
+
+                result2.innerHTML = y;
+                let resultNum2 = y;
+                result2.innerHTML = resultNum2
+            });
+
+            btn4.addEventListener("click", () => {
+                y++
+                result2.innerHTML = y;
+                let resultNum2 = y;
+                result2.innerHTML = resultNum2;
+            });
+        </script>
+            
+            
+            
+            
+
+
+
+</body>
+</html>

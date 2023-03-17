@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+    /*
+    keyboard event
+
+    keydown : 키보드를 눌렀을 때
+    keyup : 키보드를 땔 때
+    keypress : 글자를 입력했을 때
+
+    keydown > keypress > keyup
+    */
+  $(function() {
+    $('textarea').keydown(function() {
+      // 남은 글자 확인
+      let len = $(this).val().length;
+      let rem = 20-len;
+      console.log(`남은 글자수 =${rem} `);
+
+      $('h1').html(rem);
+      // 남은 글자수 > 0 black 아닐 경우 red
+      if(rem > 0){
+        $('h1').css('color','black');
+      } else {
+        $('h1').css('color','red');
+      }
+      
+    })
+  })
+  </script>
+</head>
+<body>
+  <div>
+    <p>야생화 : 하얗게 피어난 얼음 꽃 하나가...얼굴을 처 내밀어</p>
+    <h1>20</h1>
+    <textarea name="" id="" cols="50" rows="100"></textarea>
+  </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+  
+      
+      //3 . 실습 1
+      // header3 태그를 클릭하면 해당 객체가 삭제가 되는 onclick이벤트를 작성해보세요
+      document.getElementById("header3").onclick = (e) => {
+                e.target.remove();
+            };
+      
+      // 실습2.
+      // 임의의 img태그를 클릭하면 상세설명내용(p태그)과 상세설명닫기버튼 이 나타내게 
+      // 하고 상세내용닫기버튼을 클릭하면 상세내용이 숨겨지는 이벤트를 작성하세요
+      document.getElementById("rabbit").onclick = (e) => {
+                let info = document.getElementById("info");
+                info.style.display = "block";
+            }
+            
+      
+      // 실습3. button클릭시에 눌린횟수를 카운트하기
+			// button-1을 클릭하면 2개가 동시에 카운트되고
+			// button-2를 클릭하면 button-2의 횟수만 카운트하기
+			// getElementById(), Number(), innerHTML, Number()
+			// button1.onclick -> button2.onclick을 호출
+      
+      
+    
+    
+    
+  </script>
+</head>
+<body>
+  <h2 id="header3" style="color : red">여기 클릭</h2>
+  <hr>
+  <img src="/js08_events/images/rabbit.jpg" alt="rabbit">
+  <div>
+
+    <p>구문 오류: 코드에 잘못된 철자가 있으면 발생하는 오류로, 프로그램이 아예 구동하지 못하거나 중간에 멈춰버리는 현상을 일으키며, 모종의 오류 메시지도 나타납니다. 올바른 도구와, 메시지의 뜻만 파악하고 있으면 그럭저럭 고칠 만합니다!</p>
+    <button onclick="document.getElementById('info').style.display='none'"> hide </button>
+  </div>
+  
+  
+</body>
+</html>
+  
